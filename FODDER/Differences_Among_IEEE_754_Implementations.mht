@@ -1,0 +1,1284 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: Differences Among IEEE 754 Implementations
+Date: Sun, 13 Mar 2011 20:18:26 -0400
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_00C9_01CBE1BB.CF7FBC20"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5931
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_00C9_01CBE1BB.CF7FBC20
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.validlab.com/goldberg/addendum.html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Differences Among IEEE 754 Implementations</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<META content=3D"MSHTML 6.00.6000.17095" name=3DGENERATOR></HEAD>
+<BODY bgColor=3D#ffffff><A name=3Dtop></A>Visitor count for this page =
+starting 14=20
+Jan 98: <IMG=20
+src=3D"http://www.validlab.com/cgi-bin/Count.cgi?dd=3DD|ft=3D3|df=3DAppen=
+dixD"=20
+align=3DabsMiddle>=20
+<HR>
+(The following remarks are extracted from Sun's Numerical Computation =
+Guide=20
+Appendix D, an expansion upon David Goldberg's "What Every Computer =
+Scientist=20
+Should Know About Floating-Point Arithmetic". Page numbers refer to that =
+
+document.)=20
+<P>Contents:=20
+<UL>
+  <LI><A =
+href=3D"http://www.validlab.com/goldberg/addendum.html#current">Current=20
+  IEEE 754 Implementations</A>=20
+  <LI><A =
+href=3D"http://www.validlab.com/goldberg/addendum.html#pitfalls">Pitfalls=
+=20
+  in Computations on Extended-Based Systems</A>=20
+  <LI><A=20
+  =
+href=3D"http://www.validlab.com/goldberg/addendum.html#support">Programmi=
+ng=20
+  Language Support for Extended Precision</A>=20
+  <LI><A=20
+  =
+href=3D"http://www.validlab.com/goldberg/addendum.html#conclusion">Conclu=
+sion</A>=20
+  </LI></UL>
+<H2>Differences Among IEEE 754 Implementations</H2>
+<HR>
+<B>Note:</B> This section is not part of the published paper. It has =
+been added=20
+to clarify certain points and correct possible misconceptions about the =
+IEEE=20
+standard that the reader might infer from the paper. This material was =
+not=20
+written by David Goldberg, but it appears here with his permission.=20
+<HR>
+The preceding paper has shown that floating-point arithmetic must be =
+implemented=20
+carefully, since programmers may depend on its properties for the =
+correctness=20
+and accuracy of their programs. In particular, the IEEE standard =
+requires a=20
+careful implementation, and it is possible to write useful programs that =
+work=20
+correctly and deliver accurate results only on systems that conform to =
+the=20
+standard. The reader might be tempted to conclude that such programs =
+should be=20
+portable to all IEEE systems. Indeed, portable software would be easier =
+to write=20
+if the remark on page 195, "When a program is moved between two machines =
+and=20
+both support IEEE arithmetic, then if any intermediate result differs, =
+it must=20
+be because of software bugs, not from differences in arithmetic," were =
+true.=20
+<P>Unfortunately, the IEEE standard does not guarantee that the same =
+program=20
+will deliver identical results on all conforming systems. Most programs =
+will=20
+actually produce different results on different systems for a variety of =
+
+reasons. For one, most programs involve the conversion of numbers =
+between=20
+decimal and binary formats, and the IEEE standard doesn't completely =
+specify the=20
+accuracy with which such conversions must be performed. For another, =
+many=20
+programs use elementary functions supplied by a system library, and the =
+standard=20
+doesn't specify these functions at all. Of course, most programmers know =
+that=20
+these features lie beyond the scope of the IEEE standard.=20
+<P>Many programmers may not realize that even a program that uses only =
+the=20
+numeric formats and operations prescribed by the IEEE standard can =
+compute=20
+different results on different systems. In fact, the authors of the =
+standard=20
+intended to allow different implementations to obtain different results. =
+Their=20
+intent is evident in the definition of the term <I>destination</I> in =
+the IEEE=20
+754 standard: "A destination may be either explicitly designated by the =
+user or=20
+implicitly supplied by the system (for example, intermediate results in=20
+subexpressions or arguments for procedures). Some languages place the =
+results of=20
+intermediate calculations in destinations beyond the user's control.=20
+Nonetheless, this standard defines the result of an operation in terms =
+of that=20
+destination's format and the operands' values." (IEEE 754-1985, p. 7) In =
+other=20
+words, the IEEE standard requires that each result be rounded correctly =
+to the=20
+precision of the destination into which it will be placed, but the =
+standard does=20
+not require that the precision of that destination be determined by a =
+user's=20
+program. Thus, different systems may deliver their results to =
+destinations with=20
+different precisions, causing the same program to produce different =
+results=20
+(sometimes dramatically so), even though those systems all conform to =
+the=20
+standard.=20
+<P>Several of the examples in the preceding paper depend on some =
+knowledge of=20
+the way floating-point arithmetic is rounded. In order to rely on =
+examples such=20
+as these, a programmer must be able to predict how a program will be=20
+interpreted, and in particular, on an IEEE system, what the precision of =
+the=20
+destination of each arithmetic operation may be. Alas, the loophole in =
+the IEEE=20
+standard's definition of <I>destination</I> undermines the programmer's =
+ability=20
+to know how a program will be interpreted. Consequently, several of the =
+examples=20
+given above, when implemented as apparently portable programs in a =
+high-level=20
+language, may not work correctly on IEEE systems that normally deliver =
+results=20
+to destinations with a different precision than the programmer expects. =
+Other=20
+examples may work, but proving that they work may lie beyond the average =
+
+programmer's ability.=20
+<P>In this section, we classify existing implementations of IEEE 754 =
+arithmetic=20
+based on the precisions of the destination formats they normally use. We =
+then=20
+review some examples from the paper to show that delivering results in a =
+wider=20
+precision than a program expects can cause it to compute wrong results =
+even=20
+though it is provably correct when the expected precision is used. We =
+also=20
+revisit one of the proofs in the paper to illustrate the intellectual =
+effort=20
+required to cope with unexpected precision even when it doesn't =
+invalidate our=20
+programs. These examples show that despite all that the IEEE standard=20
+prescribes, the differences it allows among different implementations =
+can=20
+prevent us from writing portable, efficient numerical software whose =
+behavior we=20
+can accurately predict. To develop such software, then, we must first =
+create=20
+programming languages and environments that limit the variability the =
+IEEE=20
+standard permits and allow programmers to express the floating-point =
+semantics=20
+upon which their programs depend. <A name=3Dcurrent></A>
+<H3>Current IEEE 754 Implementations</H3>Current implementations of IEEE =
+754=20
+arithmetic can be divided into two groups distinguished by the degree to =
+which=20
+they support different floating-point formats in hardware. =
+<I>Extended-based</I>=20
+systems, exemplified by the Intel x86 family of processors, provide full =
+support=20
+for an extended double precision format but only partial support for =
+single and=20
+double precision: they provide instructions to load or store data in =
+single and=20
+double precision, converting it on-the-fly to or from the extended =
+double=20
+format, and they provide special modes (not the default) in which the =
+results of=20
+arithmetic operations are rounded to single or double precision even =
+though they=20
+are kept in registers in extended double format. (Motorola 68000 series=20
+processors round results to both the precision and range of the single =
+or double=20
+formats in these modes. Intel x86 and compatible processors round =
+results to the=20
+precision of the single or double formats but retain the same range as =
+the=20
+extended double format.) <I>Single/double</I> systems, including most =
+RISC=20
+processors, provide full support for single and double precision formats =
+but no=20
+support for an IEEE-compliant extended double precision format. (The IBM =
+POWER=20
+architecture provides only partial support for single precision, but for =
+the=20
+purpose of this section, we classify it as a single/double system.)=20
+<P>To see how a computation might behave differently on an =
+extended-based system=20
+than on a single/double system, consider a C version of the example from =
+page=20
+211: <PRE>int main() {
+    double  q;
+
+    q =3D 3.0/7.0;
+    if (q =3D=3D 3.0/7.0) printf("Equal\n");
+    else printf("Not Equal\n");
+    return 0;
+}</PRE>Here the constants 3.0 and 7.0 are interpreted as double =
+precision=20
+floating-point numbers, and the expression 3.0/7.0 inherits the =
+<TT>double</TT>=20
+data type. On a single/double system, the expression will be evaluated =
+in double=20
+precision since that is the most efficient format to use. Thus, =
+<TT>q</TT> will=20
+be assigned the value 3.0/7.0 rounded correctly to double precision. In =
+the next=20
+line, the expression 3.0/7.0 will again be evaluated in double =
+precision, and of=20
+course the result will be equal to the value just assigned to =
+<TT>q</TT>, so the=20
+program will print "Equal" as expected.=20
+<P>On an extended-based system, even though the expression 3.0/7.0 has =
+type=20
+<TT>double</TT>, the quotient will be computed in a register in extended =
+double=20
+format, and thus in the default mode, it will be rounded to extended =
+double=20
+precision. When the resulting value is assigned to the variable =
+<TT>q</TT>,=20
+however, it may then be stored in memory, and since <TT>q</TT> is =
+declared=20
+<TT>double</TT>, the value will be rounded to double precision. In the =
+next=20
+line, the expression 3.0/7.0 may again be evaluated in extended =
+precision=20
+yielding a result that differs from the double precision value stored in =
+
+<TT>q</TT>, causing the program to print "Not Equal". Of course, other =
+outcomes=20
+are possible, too: the compiler could decide to store and thus round the =
+value=20
+of the expression 3.0/7.0 in the second line before comparing it with=20
+<TT>q</TT>, or it could keep <TT>q</TT> in a register in extended =
+precision=20
+without storing it. An optimizing compiler might evaluate the expression =
+3.0/7.0=20
+at compile time, perhaps in double precision or perhaps in extended =
+double=20
+precision. (With one x86 compiler, the program prints "Equal" when =
+compiled with=20
+optimization and "Not Equal" when compiled for debugging.) Finally, some =
+
+compilers for extended-based systems automatically change the rounding =
+precision=20
+mode to cause operations producing results in registers to round those =
+results=20
+to single or double precision, albeit possibly with a wider range. Thus, =
+on=20
+these systems, we can't predict the behavior of the program simply by =
+reading=20
+its source code and applying a basic understanding of IEEE 754 =
+arithmetic.=20
+Neither can we accuse the hardware or the compiler of failing to provide =
+an IEEE=20
+754 compliant environment; the hardware has delivered a correctly =
+rounded result=20
+to each destination, as it is required to do, and the compiler has =
+assigned some=20
+intermediate results to destinations that are beyond the user's control, =
+as it=20
+is allowed to do. <A name=3Dpitfalls></A>
+<H3>Pitfalls in Computations on Extended-Based Systems</H3>Conventional =
+wisdom=20
+maintains that extended-based systems must produce results that are at =
+least as=20
+accurate, if not more accurate than those delivered on single/double =
+systems,=20
+since the former always provide at least as much precision and often =
+more than=20
+the latter. Trivial examples such as the C program above as well as more =
+subtle=20
+programs based on the examples discussed below show that this wisdom is =
+naive at=20
+best: some apparently portable programs, which are indeed portable =
+across=20
+single/double systems, deliver incorrect results on extended-based =
+systems=20
+precisely because the compiler and hardware conspire to occasionally =
+provide=20
+more precision than the program expects.=20
+<P>Current programming languages make it difficult for a program to =
+specify the=20
+precision it expects. As the section "Languages and Compilers" on page =
+214=20
+mentions, many programming languages don't specify that each occurrence =
+of an=20
+expression like <TT>10.0*x</TT> in the same context should evaluate to =
+the same=20
+value. Some languages, such as Ada, were influenced in this respect by=20
+variations among different arithmetics prior to the IEEE standard. More=20
+recently, languages like ANSI C have been influenced by =
+standard-conforming=20
+extended-based systems. In fact, the ANSI C standard explicitly allows a =
+
+compiler to evaluate a floating-point expression to a precision wider =
+than that=20
+normally associated with its type. As a result, the value of the =
+expression=20
+<TT>10.0*x</TT> may vary in ways that depend on a variety of factors: =
+whether=20
+the expression is immediately assigned to a variable or appears as a=20
+subexpression in a larger expression; whether the expression =
+participates in a=20
+comparison; whether the expression is passed as an argument to a =
+function, and=20
+if so, whether the argument is passed by value or by reference; the =
+current=20
+precision mode; the level of optimization at which the program was =
+compiled; the=20
+precision mode and expression evaluation method used by the compiler =
+when the=20
+program was compiled; and so on.=20
+<P>Language standards are not entirely to blame for the vagaries of =
+expression=20
+evaluation. Extended-based systems run most efficiently when expressions =
+are=20
+evaluated in extended precision registers whenever possible, yet values =
+that=20
+must be stored are stored in the narrowest precision required. =
+Constraining a=20
+language to require that <TT>10.0*x</TT> evaluate to the same value =
+everywhere=20
+would impose a performance penalty on those systems. Unfortunately, =
+allowing=20
+those systems to evaluate <TT>10.0*x</TT> differently in syntactically=20
+equivalent contexts imposes a penalty of its own on programmers of =
+accurate=20
+numerical software by preventing them from relying on the syntax of =
+their=20
+programs to express their intended semantics.=20
+<P>Do real programs depend on the assumption that a given expression =
+always=20
+evaluates to the same value? Recall the algorithm presented in Theorem 4 =
+for=20
+computing ln(1 + <I>x</I>), written here in Fortran: <PRE>real function =
+log1p(x)
+real x
+if (1.0 + x .eq. 1.0) then
+   log1p =3D x
+else
+   log1p =3D log(1.0 + x) * x / ((1.0 + x) - 1.0)
+endif
+return</PRE>On an extended-based system, a compiler may evaluate the =
+expression=20
+<TT>1.0 + x</TT> in the third line in extended precision and compare the =
+result=20
+with <TT>1.0</TT>. When the same expression is passed to the log =
+function in the=20
+sixth line, however, the compiler may store its value in memory, =
+rounding it to=20
+single precision. Thus, if <TT>x</TT> is not so small that <TT>1.0 + =
+x</TT>=20
+rounds to <TT>1.0</TT> in extended precision but small enough that =
+<TT>1.0 +=20
+x</TT> rounds to <TT>1.0</TT> in single precision, then the value =
+returned by=20
+<TT>log1p(x)</TT> will be zero instead of <TT>x</TT>, and the relative =
+error=20
+will be one---rather larger than five rounding errors. Similarly, =
+suppose the=20
+rest of the expression in the sixth line, including the reoccurrence of =
+the=20
+subexpression <TT>1.0 + x</TT>, is evaluated in extended precision. In =
+that=20
+case, if <TT>x</TT> is small but not quite small enough that <TT>1.0 + =
+x</TT>=20
+rounds to <TT>1.0</TT> in single precision, then the value returned by=20
+<TT>log1p(x)</TT> can exceed the correct value by nearly as much as =
+<TT>x</TT>,=20
+and again the relative error can approach one. For a concrete example, =
+take=20
+<TT>x</TT> to be 2<SUP>-24</SUP> + 2<SUP>-47</SUP>, so <TT>x</TT> is the =
+
+smallest single precision number such that <TT>1.0 + x</TT> rounds up to =
+the=20
+next larger number, 1 + 2<SUP>-23</SUP>. Then <TT>log(1.0 + x)</TT> is=20
+approximately 2<SUP>-23</SUP>. Because the denominator in the expression =
+in the=20
+sixth line is evaluated in extended precision, it is computed exactly =
+and=20
+delivers <TT>x</TT>, so <TT>log1p(x)</TT> returns approximately =
+2<SUP>-23</SUP>,=20
+which is nearly twice as large as the exact value. (This actually =
+happens with=20
+at least one compiler. When the preceding code is compiled by the Sun =
+WorkShop=20
+Compilers 4.2.1 Fortran 77 compiler for x86 systems using the =
+<TT>-O</TT>=20
+optimization flag, the generated code computes <TT>1.0 + x</TT> exactly =
+as=20
+described. As a result, the code delivers zero for =
+<TT>log1p(1.0e-10)</TT> and=20
+<TT>1.19209E-07</TT> for <TT>log1p(5.97e-8)</TT>.)=20
+<P>For the algorithm of Theorem 4 to work correctly, the expression =
+<TT>1.0 +=20
+x</TT> must be evaluated the same way each time it appears; the =
+algorithm can=20
+fail on extended-based systems only when <TT>1.0 + x</TT> is evaluated =
+to=20
+extended double precision in one instance and to single or double =
+precision in=20
+another. Of course, since <TT>log</TT> is a generic intrinsic function =
+in=20
+Fortran, a compiler could evaluate the expression <TT>1.0 + x</TT> in =
+extended=20
+precision throughout, computing its logarithm in the same precision, but =
+
+evidently we cannot assume that the compiler will do so. (One can also =
+imagine a=20
+similar example involving a user-defined function. In that case, a =
+compiler=20
+could still keep the argument in extended precision even though the =
+function=20
+returns a single precision result, but few if any existing Fortran =
+compilers do=20
+this, either.) We might therefore attempt to ensure that <TT>1.0 + =
+x</TT> is=20
+evaluated consistently by assigning it to a variable. Unfortunately, if =
+we=20
+declare that variable <TT>real</TT>, we may still be foiled by a =
+compiler that=20
+substitutes a value kept in a register in extended precision for one =
+appearance=20
+of the variable and a value stored in memory in single precision for =
+another.=20
+Instead, we would need to declare the variable with a type that =
+corresponds to=20
+the extended precision format. Standard FORTRAN 77 does not provide a =
+way to do=20
+this, and while Fortran 90 offers the <TT>SELECTED_REAL_KIND</TT> =
+mechanism for=20
+describing various formats, it does not explicitly require =
+implementations that=20
+evaluate expressions in extended precision to allow variables to be =
+declared=20
+with that precision. In short, there is no portable way to write this =
+program in=20
+standard Fortran that is guaranteed to prevent the expression <TT>1.0 + =
+x</TT>=20
+from being evaluated in a way that invalidates our proof.=20
+<P>There are other examples that can malfunction on extended-based =
+systems even=20
+when each subexpression is stored and thus rounded to the same =
+precision. The=20
+cause is <I>double-rounding</I>. In the default precision mode, an=20
+extended-based system will initially round each result to extended =
+double=20
+precision. If that result is then stored to double precision, it is =
+rounded=20
+again. The combination of these two roundings can yield a value that is=20
+different than what would have been obtained by rounding the first =
+result=20
+correctly to double precision. This can happen when the result as =
+rounded to=20
+extended double precision is a "halfway case", i.e., it lies exactly =
+halfway=20
+between two double precision numbers, so the second rounding is =
+determined by=20
+the round-ties-to-even rule. If this second rounding rounds in the same=20
+direction as the first, the net rounding error will exceed half a unit =
+in the=20
+last place. (Note, though, that double-rounding only affects double =
+precision=20
+computations. One can prove that the sum, difference, product, or =
+quotient of=20
+two <I>p</I>-bit numbers, or the square root of a <I>p</I>-bit number, =
+rounded=20
+first to <I>q</I> bits and then to <I>p</I> bits gives the same value as =
+if the=20
+result were rounded just once to <I>p</I> bits provided <I>q</I> <IMG =
+alt=3D">=3D"=20
+src=3D"http://www.validlab.com/goldberg/geq.gif"> 2<I>p</I> + 2. Thus, =
+extended=20
+double precision is wide enough that single precision computations don't =
+suffer=20
+double-rounding.)=20
+<P>Some algorithms that depend on correct rounding can fail with=20
+double-rounding. In fact, even some algorithms that don't require =
+correct=20
+rounding and work correctly on a variety of machines that don't conform =
+to IEEE=20
+754 can fail with double-rounding. The most useful of these are the =
+portable=20
+algorithms for performing simulated multiple precision arithmetic =
+mentioned on=20
+page 186. For example, the procedure described in Theorem 6 for =
+splitting a=20
+floating-point number into high and low parts doesn't work correctly in=20
+double-rounding arithmetic: try to split the double precision number=20
+2<SUP>52</SUP> + 3 =D7 2<SUP>26</SUP> - 1 into two parts each with at =
+most 26=20
+bits. When each operation is rounded correctly to double precision, the =
+high=20
+order part is 2<SUP>52</SUP> + 2<SUP>27</SUP> and the low order part is=20
+2<SUP>26</SUP> - 1, but when each operation is rounded first to extended =
+double=20
+precision and then to double precision, the procedure produces a high =
+order part=20
+of 2<SUP>52</SUP> + 2<SUP>28</SUP> and a low order part of =
+-2<SUP>26</SUP> - 1.=20
+The latter number occupies 27 bits, so its square can't be computed =
+exactly in=20
+double precision. Of course, it would still be possible to compute the =
+square of=20
+this number in extended double precision, but the resulting algorithm =
+would no=20
+longer be portable to single/double systems. Also, later steps in the =
+multiple=20
+precision multiplication algorithm assume that all partial products have =
+been=20
+computed in double precision. Handling a mixture of double and extended =
+double=20
+precision variables correctly would make the implementation =
+significantly more=20
+expensive.=20
+<P>Likewise, portable algorithms for adding multiple precision numbers=20
+represented as arrays of double precision numbers can fail in =
+double-rounding=20
+arithmetic. These algorithms typically rely on a technique similar to =
+Kahan's=20
+summation formula. As the informal explanation of the summation formula =
+given on=20
+page 239 suggests, if <TT>s</TT> and <TT>y</TT> are floating-point =
+variables=20
+with |<TT>s</TT>| <IMG alt=3D">=3D" =
+src=3D"http://www.validlab.com/goldberg/geq.gif">=20
+|<TT>y</TT>| and we compute: <PRE>t =3D s + y;
+e =3D (s - t) + y;</PRE>then in most arithmetics, <TT>e</TT> recovers =
+exactly the=20
+roundoff error that occurred in computing <TT>t</TT>. This technique =
+doesn't=20
+work in double-rounded arithmetic, however: if <TT>s</TT> =3D =
+2<SUP>52</SUP> + 1=20
+and <TT>y</TT> =3D 1/2 - 2<SUP>-54</SUP>, then <TT>s + y</TT> rounds =
+first to=20
+2<SUP>52</SUP> + 3/2 in extended double precision, and this value rounds =
+to=20
+2<SUP>52</SUP> + 2 in double precision by the round-ties-to-even rule; =
+thus, the=20
+net rounding error in computing <TT>t</TT> is 1/2 + 2<SUP>-54</SUP>, =
+which isn't=20
+representable exactly in double precision and so can't be computed =
+exactly by=20
+the expression shown above. Here again, it would be possible to recover =
+the=20
+roundoff error by computing the sum in extended double precision, but =
+then a=20
+program would have to do extra work to reduce the final outputs back to =
+double=20
+precision, and double-rounding could afflict this process, too. For this =
+reason,=20
+although portable programs for simulating multiple precision arithmetic =
+by these=20
+methods work correctly and efficiently on a wide variety of machines, =
+they don't=20
+work as advertised on extended-based systems.=20
+<P>Finally, some algorithms that at first sight appear to depend on =
+correct=20
+rounding may in fact work correctly with double-rounding. In these =
+cases, the=20
+cost of coping with double-rounding lies not in the implementation but =
+in the=20
+verification that the algorithm works as advertised. To illustrate, we =
+prove the=20
+following variant of Theorem 7:=20
+<P><BIG><I>Theorem 7'</I></BIG>=20
+<P><I>If m and n are integers representable in IEEE 754 double precision =
+
+with</I> |<I>m</I>| &lt; 2<SUP>52</SUP> <I>and n has the special form =
+n</I> =3D=20
+2<SUP><I>i</I></SUP> + 2<SUP><I>j</I></SUP><I>, then</I> fl(fl(<I>m</I> =
+/=20
+<I>n</I>) =D7 <I>n</I>) =3D <I>m, provided both floating-point =
+operations are either=20
+rounded correctly to double precision or rounded first to extended =
+double=20
+precision and then to double precision.</I>=20
+<P><BIG><I>Proof</I></BIG>=20
+<P>Assume without loss that <I>m</I> &gt; 0. Let <I>q</I> =3D =
+fl(<I>m</I> /=20
+<I>n</I>). Scaling by powers of two, we can consider an equivalent =
+setting in=20
+which 2<SUP>52</SUP> <IMG alt=3D"<=3D"=20
+src=3D"http://www.validlab.com/goldberg/leq.gif"> <I>m</I> &lt; =
+2<SUP>53</SUP> and=20
+likewise for <I>q</I>, so that both <I>m</I> and <I>q</I> are integers =
+whose=20
+least significant bits occupy the units place (i.e., ulp(<I>m</I>) =3D=20
+ulp(<I>q</I>) =3D 1). Before scaling, we assumed <I>m</I> &lt; =
+2<SUP>52</SUP>, so=20
+after scaling, <I>m</I> is an even integer. Also, because the scaled =
+values of=20
+<I>m</I> and <I>q</I> satisfy <I>m</I>/2 &lt; <I>q</I> &lt; 2<I>m</I>, =
+the=20
+corresponding value of <I>n</I> must have one of two forms depending on =
+which of=20
+<I>m</I> or <I>q</I> is larger: if <I>q</I> &lt; <I>m</I>, then =
+evidently 1 &lt;=20
+<I>n</I> &lt; 2, and since <I>n</I> is a sum of two powers of two, =
+<I>n</I> =3D 1=20
++ 2<SUP>-<I>k</I></SUP> for some <I>k</I>; similarly, if <I>q</I> &gt; =
+<I>m</I>,=20
+then 1/2 &lt; <I>n</I> &lt; 1, so <I>n</I> =3D 1/2 +=20
+2<SUP>-(<I>k</I>&nbsp;+&nbsp;1)</SUP>. (As <I>n</I> is the sum of two =
+powers of=20
+two, the closest possible value of <I>n</I> to one is <I>n</I> =3D 1 +=20
+2<SUP>-52</SUP>. Because <I>m</I>/(1 + 2<SUP>-52</SUP>) is no larger =
+than the=20
+next smaller double precision number less than <I>m</I>, we can't have =
+<I>q</I>=20
+=3D <I>m</I>.)=20
+<P>Let <I>e</I> denote the rounding error in computing <I>q</I>, so that =
+
+<I>q</I> =3D <I>m</I>/<I>n</I> + <I>e</I>, and the computed value =
+fl(<I>q</I> =D7=20
+<I>n</I>) will be the (once or twice) rounded value of <I>m</I> + =
+<I>ne</I>.=20
+Consider first the case in which each floating-point operation is =
+rounded=20
+correctly to double precision. In this case, |<I>e</I>| &lt; 1/2. If =
+<I>n</I>=20
+has the form 1/2 + 2<SUP>-(<I>k</I>&nbsp;+&nbsp;1)</SUP>, then <I>ne</I> =
+=3D=20
+<I>nq</I> - <I>m</I> is an integer multiple of=20
+2<SUP>-(<I>k</I>&nbsp;+&nbsp;1)</SUP> and |<I>ne</I>| &lt; 1/4 +=20
+2<SUP>-(<I>k</I>&nbsp;+&nbsp;2)</SUP>. This implies that |<I>ne</I>| =
+<IMG=20
+alt=3D"<=3D" src=3D"http://www.validlab.com/goldberg/leq.gif"> 1/4. =
+Recall that the=20
+difference between <I>m</I> and the next larger representable number is =
+1 and=20
+the difference between <I>m</I> and the next smaller representable =
+number is=20
+either 1 if <I>m</I> &gt; 2<SUP>52</SUP> or 1/2 if <I>m</I> =3D =
+2<SUP>52</SUP>.=20
+Thus, as <I>ne</I> <IMG alt=3D"<=3D" =
+src=3D"http://www.validlab.com/goldberg/leq.gif">=20
+1/4, <I>m</I> + <I>ne</I> will round to <I>m</I>. (Even if <I>m</I> =3D=20
+2<SUP>52</SUP> and <I>ne</I> =3D -1/4, the product will round to =
+<I>m</I> by the=20
+round-ties-to-even rule.) Similarly, if <I>n</I> has the form 1 +=20
+2<SUP>-<I>k</I></SUP>, then <I>ne</I> is an integer multiple of=20
+2<SUP>-<I>k</I></SUP> and |<I>ne</I>| &lt; 1/2 +=20
+2<SUP>-(<I>k</I>&nbsp;+&nbsp;1)</SUP>; this implies |<I>ne</I>| <IMG =
+alt=3D"<=3D"=20
+src=3D"http://www.validlab.com/goldberg/leq.gif"> 1/2. We can't have =
+<I>m</I> =3D=20
+2<SUP>52</SUP> in this case because <I>m</I> is strictly greater than =
+<I>q</I>,=20
+so <I>m</I> differs from its nearest representable neighbors by <IMG =
+alt=3D+/-=20
+src=3D"http://www.validlab.com/goldberg/pm.gif">1. Thus, as |<I>ne</I>| =
+<IMG=20
+alt=3D"<=3D" src=3D"http://www.validlab.com/goldberg/leq.gif"> 1/2, =
+again <I>m</I> +=20
+<I>ne</I> will round to <I>m</I>. (Even if |<I>ne</I>| =3D 1/2, the =
+product will=20
+round to <I>m</I> by the round-ties-to-even rule because <I>m</I> is =
+even.) This=20
+completes the proof for correctly rounded arithmetic.=20
+<P>In double-rounding arithmetic, it may still happen that <I>q</I> is =
+the=20
+correctly rounded quotient (even though it was actually rounded twice), =
+so=20
+|<I>e</I>| &lt; 1/2 as above. In this case, we can appeal to the =
+arguments of=20
+the previous paragraph provided we consider the fact that fl(<I>q</I> =
+=D7=20
+<I>n</I>) will be rounded twice. To account for this, note that the IEEE =
+
+standard requires that an extended double format carry at least 64 =
+significant=20
+bits, so that the numbers <I>m</I> <IMG alt=3D+/-=20
+src=3D"http://www.validlab.com/goldberg/pm.gif"> 1/2 and <I>m</I> <IMG =
+alt=3D+/-=20
+src=3D"http://www.validlab.com/goldberg/pm.gif"> 1/4 are exactly =
+representable in=20
+extended double precision. Thus, if <I>n</I> has the form 1/2 +=20
+2<SUP>-(<I>k</I>&nbsp;+&nbsp;1)</SUP>, so that |<I>ne</I>| <IMG =
+alt=3D"<=3D"=20
+src=3D"http://www.validlab.com/goldberg/leq.gif"> 1/4, then rounding =
+<I>m</I> +=20
+<I>ne</I> to extended double precision must produce a result that =
+differs from=20
+<I>m</I> by at most 1/4, and as noted above, this value will round to =
+<I>m</I>=20
+in double precision. Similarly, if <I>n</I> has the form 1 +=20
+2<SUP>-<I>k</I></SUP>, so that |<I>ne</I>| <IMG alt=3D"<=3D"=20
+src=3D"http://www.validlab.com/goldberg/leq.gif"> 1/2, then rounding =
+<I>m</I> +=20
+<I>ne</I> to extended double precision must produce a result that =
+differs from=20
+<I>m</I> by at most 1/2, and this value will round to <I>m</I> in double =
+
+precision. (Recall that <I>m</I> &gt; 2<SUP>52</SUP> in this case.)=20
+<P>Finally, we are left to consider cases in which <I>q</I> is not the =
+correctly=20
+rounded quotient due to double-rounding. In these cases, we have =
+|<I>e</I>| &lt;=20
+1/2 + 2<SUP>-(<I>d</I>&nbsp;+&nbsp;1)</SUP> in the worst case, where =
+<I>d</I> is=20
+the number of extra bits in the extended double format. (All existing=20
+extended-based systems support an extended double format with exactly 64 =
+
+significant bits; for this format, <I>d</I> =3D 64 - 53 =3D 11.) Because =
+
+double-rounding only produces an incorrectly rounded result when the =
+second=20
+rounding is determined by the round-ties-to-even rule, <I>q</I> must be =
+an even=20
+integer. Thus, if <I>n</I> has the form 1/2 +=20
+2<SUP>-(<I>k</I>&nbsp;+&nbsp;1)</SUP>, then <I>ne</I> =3D <I>nq</I> - =
+<I>m</I> is=20
+an integer multiple of 2<SUP>-<I>k</I></SUP>, and |<I>ne</I>| &lt; (1/2 =
++=20
+2<SUP>-(<I>k</I>&nbsp;+&nbsp;1)</SUP>)(1/2 +=20
+2<SUP>-(<I>d</I>&nbsp;+&nbsp;1)</SUP>) =3D 1/4 +=20
+2<SUP>-(<I>k</I>&nbsp;+&nbsp;2)</SUP> + =
+2<SUP>-(<I>d</I>&nbsp;+&nbsp;2)</SUP> +=20
+2<SUP>-(<I>k</I>&nbsp;+&nbsp;<I>d</I>&nbsp;+&nbsp;2)</SUP>. If <I>k</I> =
+<IMG=20
+alt=3D"<=3D" src=3D"http://www.validlab.com/goldberg/leq.gif"> <I>d</I>, =
+this implies=20
+|<I>ne</I>| <IMG alt=3D"<=3D" =
+src=3D"http://www.validlab.com/goldberg/leq.gif"> 1/4.=20
+If <I>k</I> &gt; <I>d</I>, we have |<I>ne</I>| <IMG alt=3D"<=3D"=20
+src=3D"http://www.validlab.com/goldberg/leq.gif"> 1/4 +=20
+2<SUP>-(<I>d</I>&nbsp;+&nbsp;2)</SUP>. In either case, the first =
+rounding of the=20
+product will deliver a result that differs from <I>m</I> by at most 1/4, =
+and by=20
+previous arguments, the second rounding will round to <I>m</I>. =
+Similarly, if=20
+<I>n</I> has the form 1 + 2<SUP>-<I>k</I></SUP>, then <I>ne</I> is an =
+integer=20
+multiple of 2<SUP>-(<I>k</I>&nbsp;-&nbsp;1)</SUP>, and |<I>ne</I>| &lt; =
+1/2 +=20
+2<SUP>-(<I>k</I>&nbsp;+&nbsp;1)</SUP> + =
+2<SUP>-(<I>d</I>&nbsp;+&nbsp;1)</SUP> +=20
+2<SUP>-(<I>k</I>&nbsp;+&nbsp;<I>d</I>&nbsp;+&nbsp;1)</SUP>. If <I>k</I> =
+<IMG=20
+alt=3D"<=3D" src=3D"http://www.validlab.com/goldberg/leq.gif"> <I>d</I>, =
+this implies=20
+|<I>ne</I>| <IMG alt=3D"<=3D" =
+src=3D"http://www.validlab.com/goldberg/leq.gif"> 1/2.=20
+If <I>k</I> &gt; <I>d</I>, we have |<I>ne</I>| <IMG alt=3D"<=3D"=20
+src=3D"http://www.validlab.com/goldberg/leq.gif"> 1/2 +=20
+2<SUP>-(<I>d</I>&nbsp;+&nbsp;1)</SUP>. In either case, the first =
+rounding of the=20
+product will deliver a result that differs from <I>m</I> by at most 1/2, =
+and=20
+again by previous arguments, the second rounding will round to <I>m</I>. =
+
+<SMALL><B>#</B></SMALL>=20
+<P>The preceding proof shows that the product can incur double-rounding =
+only if=20
+the quotient does, and even then, it rounds to the correct result. The =
+proof=20
+also shows that extending our reasoning to include the possibility of=20
+double-rounding can be challenging even for a program with only two=20
+floating-point operations. For a more complicated program, it may be =
+impossible=20
+to systematically account for the effects of double-rounding, not to =
+mention=20
+more general combinations of double and extended double precision =
+computations.=20
+<A name=3Dsupport></A>
+<H3>Programming Language Support for Extended Precision</H3>The =
+preceding=20
+examples should not be taken to suggest that extended precision <I>per =
+se</I> is=20
+harmful. Many programs can benefit from extended precision when the =
+programmer=20
+is able to use it selectively. Unfortunately, current programming =
+languages do=20
+not provide sufficient means for a programmer to specify when and how =
+extended=20
+precision should be used. To indicate what support is needed, we =
+consider the=20
+ways in which we might want to manage the use of extended precision.=20
+<P>In a portable program that uses double precision as its nominal =
+working=20
+precision, there are five ways we might want to control the use of a =
+wider=20
+precision:=20
+<OL>
+  <LI>Compile to produce the fastest code, using extended precision =
+where=20
+  possible on extended-based systems. Clearly most numerical software =
+does not=20
+  require more of the arithmetic than that the relative error in each =
+operation=20
+  is bounded by the "machine epsilon". When data in memory are stored in =
+double=20
+  precision, the machine epsilon is usually taken to be the largest =
+relative=20
+  roundoff error in that precision, since the input data are (rightly or =
+
+  wrongly) assumed to have been rounded when they were entered and the =
+results=20
+  will likewise be rounded when they are stored. Thus, while computing =
+some of=20
+  the intermediate results in extended precision may yield a more =
+accurate=20
+  result, extended precision is not essential. In this case, we might =
+prefer=20
+  that the compiler use extended precision only when it will not =
+apprciably slow=20
+  the program and use double precision otherwise.=20
+  <P></P>
+  <LI>Use a format wider than double if it is reasonably fast and wide =
+enough,=20
+  otherwise resort to something else. Some computations can be performed =
+more=20
+  easily when extended precision is available, but they can also be =
+carried out=20
+  in double precision with only somewhat greater effort. Consider =
+computing the=20
+  Euclidean norm of a vector of double precision numbers. By computing =
+the=20
+  squares of the elements and accumulating their sum in an IEEE 754 =
+extended=20
+  double format, with its wider exponent range, we can trivially avoid =
+premature=20
+  underflow or overflow for vectors of practical lengths. On =
+extended-based=20
+  systems, this is the fastest way to compute the norm. On single/double =
+
+  systems, an extended double format would have to be emulated in =
+software (if=20
+  one were supported at all), and such emulation would be much slower =
+than=20
+  simply using double precision, testing the exception flags to =
+determine=20
+  whether underflow or overflow occurred, and if so, repeating the =
+computation=20
+  with explicit scaling. Note that to support this use of extended =
+precision, a=20
+  language must provide both an indication of the widest available =
+format that=20
+  is reasonably fast, so that a program can choose which method to use, =
+and=20
+  environmental parameters that indicate the precision and range of each =
+format,=20
+  so that the program can verify that the widest fast format is wide =
+enough=20
+  (e.g., that it has wider range than double).=20
+  <P></P>
+  <LI>Use a format wider than double even if it has to be emulated in =
+software.=20
+  For more complicated programs than the Euclidean norm example, the =
+programmer=20
+  may simply wish to avoid the need to write two versions of the program =
+and=20
+  instead rely on extended precision even if it is slow. Again, the =
+language=20
+  must provide environmental parameters so that the program can =
+determine the=20
+  range and precision of the widest available format.=20
+  <P></P>
+  <LI>Don't use a wider precision; round results correctly to the =
+precision of=20
+  the double format, albeit possibly with extended range. For programs =
+that are=20
+  most easily written to depend on correctly rounded double precision=20
+  arithmetic, including some of the examples mentioned above, a language =
+must=20
+  provide a way for the programmer to indicate that extended precision =
+must not=20
+  be used, even though intermediate results may be computed in registers =
+with a=20
+  wider exponent range than double. (Intermediate results computed in =
+this way=20
+  can still incur double-rounding if they underflow when stored to =
+memory: if=20
+  the result of an arithmetic operation is rounded first to 53 =
+significant bits,=20
+  then rounded again when it must be denormalized, the final result may =
+differ=20
+  from what would have been obtained by rounding just once to a =
+denormalized=20
+  number. Of course, this form of double-rounding is highly unlikely to =
+affect=20
+  any practical program adversely.)=20
+  <P></P>
+  <LI>Round results correctly to both the precision and range of the =
+double=20
+  format. This strict enforcement of double precision would be most =
+useful for=20
+  programs that test either numerical software or the arithmetic itself =
+near the=20
+  limits of both the range and precision of the double format. Such =
+careful test=20
+  programs tend to be difficult to write in a portable way; they become =
+even=20
+  more difficult (and error prone) when they must employ dummy =
+subroutines and=20
+  other tricks to force results to be rounded to a particular format. =
+Thus, a=20
+  programmer using an extended-based system to develop robust software =
+that must=20
+  be portable to all IEEE 754 implementations would quickly come to =
+appreciate=20
+  being able to emulate the arithmetic of single/double systems without=20
+  extraordinary effort. </LI></OL>No current language supports all five =
+of these=20
+options. In fact, few languages have attempted to give the programmer =
+the=20
+ability to control the use of extended precision at all. One notable =
+exception=20
+is C9X, the latest revision to the C language, which is now in the final =
+stages=20
+of standardization.=20
+<P>Like the current C standard, C9X allows an implementation to evaluate =
+
+expressions in a format wider than that normally associated with their =
+type, but=20
+C9X recommends using one of only three expression evaluation methods. =
+The three=20
+recommended methods are characterized by the extent to which expressions =
+are=20
+"promoted" to wider formats, and the implementation is encouraged to =
+identify=20
+which method it uses by defining the preprocessor macro=20
+<TT>FLT_EVAL_METHOD</TT>: if <TT>FLT_EVAL_METHOD</TT> is 0, each =
+expression is=20
+evaluated in a format that corresponds to its type; if =
+<TT>FLT_EVAL_METHOD</TT>=20
+is 1, <TT>float</TT> expressions are promoted to the format that =
+corresponds to=20
+<TT>double</TT>; and if <TT>FLT_EVAL_METHOD</TT> is 2, <TT>float</TT> =
+and=20
+<TT>double</TT> expressions are promoted to the format that corresponds =
+to=20
+<TT>long double</TT>. (An implementation is allowed to set=20
+<TT>FLT_EVAL_METHOD</TT> to -1 to indicate that the expression =
+evaluation method=20
+is indeterminable.) C9X also requires that the <TT>&lt;math.h&gt;</TT> =
+header=20
+file define the types <TT>float_t</TT> and <TT>double_t</TT>, which are =
+at least=20
+as wide as <TT>float</TT> and <TT>double</TT>, respectively, and are =
+intended to=20
+match the types used to evaluate <TT>float</TT> and <TT>double</TT> =
+expressions.=20
+For example, if <TT>FLT_EVAL_METHOD</TT> is 2, both <TT>float_t</TT> and =
+
+<TT>double_t</TT> are <TT>long double</TT>. Finally, C9X requires that =
+the=20
+<TT>&lt;float.h&gt;</TT> header file define preprocessor macros that =
+specify the=20
+range and precision of the formats corresponding to each floating-point =
+type.=20
+<P>The combination of features required or recommended by C9X supports =
+some of=20
+the five options listed above but not all. For example, if an =
+implementation=20
+maps the <TT>long double</TT> type to an extended double format and =
+defines=20
+<TT>FLT_EVAL_METHOD</TT> to be 2, the programmer can reasonably assume =
+that=20
+extended precision is relatively fast, so programs like the Euclidean =
+norm=20
+example can simply use intermediate variables of type <TT>long =
+double</TT> (or=20
+<TT>double_t</TT>). On the other hand, the same implementation must keep =
+
+anonymous expressions in extended precision even when they are stored in =
+memory=20
+(e.g., when the compiler must spill floating-point registers), and it =
+must store=20
+the results of expressions assigned to variables declared =
+<TT>double</TT> to=20
+convert them to double precision even if they could have been kept in =
+registers.=20
+Thus, neither the <TT>double</TT> nor the <TT>double_t</TT> type can be =
+compiled=20
+to produce the fastest code on current extended-based hardware.=20
+<P>Likewise, C9X provides solutions to some of the problem illustrated =
+by the=20
+examples in this section but not all. A C9X version of the =
+<TT>log1p</TT>=20
+function is guaranteed to work correctly if the expression <TT>1.0 + =
+x</TT> is=20
+assigned to a variable (of any type) and that variable used throughout. =
+A=20
+portable, efficient C9X program for splitting a double precision number =
+into=20
+high and low parts, however, is more difficult: how can we split at the =
+correct=20
+position and avoid double-rounding if we cannot guarantee that =
+<TT>double</TT>=20
+expressions are rounded correctly to double precision? One solution is =
+to use=20
+the <TT>double_t</TT> type to perform the splitting in double precision =
+on=20
+single/double systems and in extended precision on extended-based =
+systems, so=20
+that in either case the arithmetic will be correctly rounded. Theorem 14 =
+says=20
+that we can split at any bit position provided we know the precision of =
+the=20
+underlying arithmetic, and the <TT>FLT_EVAL_METHOD</TT> and =
+environmental=20
+parameter macros should give us this information. The following fragment =
+shows=20
+one possible implementation: <PRE>#include &lt;math.h&gt;
+#include &lt;float.h&gt;
+
+#if (FLT_EVAL_METHOD=3D=3D2)
+#define PWR2  LDBL_MANT_DIG - (DBL_MANT_DIG/2)
+#elif ((FLT_EVAL_METHOD=3D=3D1) || (FLT_EVAL_METHOD=3D=3D0))
+#define PWR2  DBL_MANT_DIG - (DBL_MANT_DIG/2)
+#else
+#error FLT_EVAL_METHOD unknown!
+#endif
+
+...
+    double   x, xh, xl;
+    double_t m;
+
+    m =3D scalbn(1.0, PWR2) + 1.0;  // 2**PWR2 + 1
+    xh =3D (m * x) - ((m * x) - x);
+    xl =3D x - xh;
+</PRE>Of course, to find this solution, the programmer must know that=20
+<TT>double</TT> expressions may be evaluated in extended precision, that =
+the=20
+ensuing double-rounding problem can cause the algorithm to malfunction, =
+and that=20
+extended precision may be used instead according to Theorem 14. A more =
+obvious=20
+solution is simply to specify that each expression be rounded correctly =
+to=20
+double precision. On extended-based systems, this merely requires =
+changing the=20
+rounding precision mode, but unfortunately, C9X does not provide a =
+portable way=20
+to do this. (Early drafts of the Floating-Point C Edits, the working =
+document=20
+that specified the changes to be made to the C standard to support=20
+floating-point, recommended that implementations on systems with =
+rounding=20
+precision modes provide <TT>fegetprec</TT> and <TT>fesetprec</TT> =
+functions to=20
+get and set the rounding precision, analogous to the <TT>fegetround</TT> =
+and=20
+<TT>fesetround</TT> functions that get and set the rounding direction. =
+This=20
+recommendation was removed before the changes were made to the C9X =
+draft.)=20
+<P>Coincidentally, C9X's approach to supporting portability among =
+systems with=20
+different integer arithmetic capabilities suggests a better way to =
+support=20
+different floating-point architectures. Each C9X implementation supplies =
+an=20
+<TT>&lt;inttypes.h&gt;</TT> header file that defines those integer types =
+the=20
+implementation supports, named according to their sizes and efficiency: =
+for=20
+example, <TT>int32_t</TT> is an integer type exactly 32 bits wide,=20
+<TT>int_fast16_t</TT> is the implementation's fastest integer type at =
+least 16=20
+bits wide, and <TT>intmax_t</TT> is the widest integer type supported. =
+One can=20
+imagine a similar scheme for floating-point types: for example,=20
+<TT>float53_t</TT> could name a floating-point type with exactly 53 bit=20
+precision but possibly wider range, <TT>float_fast24_t</TT> could name =
+the=20
+implementation's fastest type with at least 24 bit precision, and=20
+<TT>floatmax_t</TT> could name the widest reasonably fast type =
+supported. The=20
+fast types could allow compilers on extended-based systems to generate =
+the=20
+fastest possible code subject only to the constraint that the values of =
+named=20
+variables must not appear to change as a result of register spilling. =
+The exact=20
+width types would cause compilers on extended-based systems to set the =
+rounding=20
+precision mode to round to the specified precision, allowing wider range =
+subject=20
+to the same constraint. Finally, <TT>double_t</TT> could name a type =
+with both=20
+the precision and range of the IEEE 754 double format, providing strict =
+double=20
+evaluation. Together with environmental parameter macros named =
+accordingly, such=20
+a scheme would readily support all five options described above and =
+allow=20
+programmers to indicate easily and unambiguously the floating-point =
+semantics=20
+their programs require.=20
+<P>Must language support for extended precision be so complicated? On=20
+single/double systems, four of the five options listed above coincide, =
+and there=20
+is no need to differentiate fast and exact width types. Extended-based =
+systems,=20
+however, pose difficult choices: they support neither pure double =
+precision nor=20
+pure extended precision computation as efficiently as a mixture of the =
+two, and=20
+different programs call for different mixtures. Moreover, the choice of =
+when to=20
+use extended precision should not be left to compiler writers, who are =
+often=20
+tempted by benchmarks (and sometimes told outright by numerical =
+analysts) to=20
+regard floating-point arithmetic as "inherently inexact" and therefore =
+neither=20
+deserving nor capable of the predictability of integer arithmetic. =
+Instead, the=20
+choice must be presented to programmers, and they will require languages =
+capable=20
+of expressing their selection. <A name=3Dconclusion></A>
+<H3>Conclusion</H3>The foregoing remarks are not intended to disparage=20
+extended-based systems but to expose several fallacies, the first being =
+that all=20
+IEEE 754 systems must deliver identical results for the same program. We =
+have=20
+focused on differences between extended-based systems and single/double =
+systems,=20
+but there are further differences among systems within each of these =
+families.=20
+For example, some single/double systems provide a single instruction to =
+multiply=20
+two numbers and add a third with just one final rounding. This =
+operation, called=20
+a <I>fused multiply-add</I>, can cause the same program to produce =
+different=20
+results across different single/double systems, and, like extended =
+precision, it=20
+can even cause the same program to produce different results on the same =
+system=20
+depending on whether and when it is used. (A fused multiply-add can also =
+foil=20
+the splitting process of Theorem 6, although it can also be used in a=20
+non-portable way to perform multiple precision multiplication without =
+the need=20
+for splitting.) Even though the IEEE standard didn't anticipate such an=20
+operation, it nevertheless conforms: the intermediate product is =
+delivered to a=20
+"destination" beyond the user's control that is wide enough to hold it =
+exactly,=20
+and the final sum is rounded correctly to fit its single or double =
+precision=20
+destination.=20
+<P>The idea that IEEE 754 prescribes precisely the result a given =
+program must=20
+deliver is nonetheless appealing. Many programmers like to believe that =
+they can=20
+understand the behavior of a program and prove that it will work =
+correctly=20
+without reference to the compiler that compiles it or the computer that =
+runs it.=20
+In many ways, supporting this belief is a worthwhile goal for the =
+designers of=20
+computer systems and programming languages. Unfortunately, when it comes =
+to=20
+floating-point arithmetic, the goal is virtually impossible to achieve. =
+The=20
+authors of the IEEE standards knew that, and they didn't attempt to =
+achieve it.=20
+As a result, despite nearly universal conformance to (most of) the IEEE =
+754=20
+standard throughout the computer industry, programmers of portable =
+software must=20
+continue to cope with unpredictable floating-point arithmetic.=20
+<P>If programmers are to exploit the features of IEEE 754, they will =
+need=20
+programming languages that make floating-point arithmetic predictable. =
+C9X=20
+improves predictability to some degree at the expense of requiring =
+programmers=20
+to write multiple versions of their programs, one for each=20
+<TT>FLT_EVAL_METHOD</TT>. Whether future languages will choose instead =
+to allow=20
+programmers to write a single program with syntax that unambiguously =
+expresses=20
+the extent to which it depends on IEEE 754 semantics remains to be seen. =
+
+Existing extended-based systems threaten that prospect by tempting us to =
+assume=20
+that the compiler and hardware can know better than the programmer how a =
+
+computation should be performed on a given system. That assumption is =
+the second=20
+fallacy: the accuracy required in a computed result depends not on the =
+machine=20
+that produces it but only on the conclusions that will be drawn from it, =
+and of=20
+the programmer, the compiler, and the hardware, at best only the =
+programmer can=20
+know what those conclusions may be.=20
+<P><SMALL>Copyright 1997 Sun Microsystems, Inc.</SMALL> =
+</P></BODY></HTML>
+
+------=_NextPart_000_00C9_01CBE1BB.CF7FBC20
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: http://www.validlab.com/cgi-bin/Count.cgi?dd=D|ft=3|df=AppendixD
+
+R0lGODlhPAATAPIAAAAAADRJAAD/AGSL2LPG6wAAAAAAAAAAACH+aUNvdW50LmNnaSAyLjUsKEFw
+ci0wOC0yMDAxLTEpCkJ5IE11aGFtbWFkIEEgTXVxdWl0Cmh0dHA6Ly93d3cubXVxdWl0LmNvbS9t
+dXF1aXQvc29mdHdhcmUvQ291bnQvQ291bnQuaHRtbAAsAAAAADwAEwAAA/5IREREhBBCCCGEEEII
+IQRBEARBEARBEARBEARBEARBEARBEARBEAQCgUAgDAaDwWAwGAwGg8FgMBgMBoPBYDAYDAaDwWAw
+GAwGg8FgMBgMBoPBYDAYDAaDwWAwGAwGAQQDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB
+AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEDAQQDAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQDAQQDAQAAAgICBAgAAAAAAAAAAAAAAAAAAAAC
+BAgQIAAAAAAABAgQIP5AAAAAAAAIECBAgAAAAAAAECBAgAABAAAQGBCAwIAAAAQAAAAAAAABAAAA
+AAAAAAAAAgAAEAAAAAAAAAQAAAAAAAAAAAAIAABAAAAAAAAAAAAAgAAAAAAAAAAAAIEBAQgMCABA
+AAAAAAAAEAAAAAAAAAAAACAAAAABAAAAAABAAAAAAAAAAAAAgAAAAAQAAAAAAAAAAAAIAAAAAAAA
+AAAQGBCAwIAAAAQAAAAAAAABAAAAAAAAAAAAAgAAEAAAAAAAAAQAAAAAAAAAAAAIAABAAAAAAAAA
+AAAAgAAAAAAAAAAAAIEBAQgMCABAAAAAAAAAEAAAAAAAAAAAACAAAP4AAQAAAAAAAAgAAAAAAAAA
+AAAAIAAAAAgAAAAAAAAAAAAAIAAAAAAAAAAAAEDAAAEQMEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAIIIIAAAgAAAAAACCCAAAIIAAAAAAAggAACCCAAAAAAAIAAAggggAAAAEDAAAEQMEAAAAgA
+AAAAAACAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAgAAAAAAAAAAAAAIAAAAAAAAAAAAACAAAAAIAAA
+AAAAAAACAEDAAAEQMEAAAAgAAAAAAACAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAgAAAAAAAAAAAAA
+IAAAAAAAAAAAAP4AgAAAACAAAAAAAAAAAgBAwAABEDBAAAAIAAAAAAAAgAAAAAAAAAAAAAAAAgAA
+AAAAAAAAAAAIAAAAAAAAAAAAACAAAAAAAAAAAAAAgAAAACAAAAAAAAAAAgBAwAABEDBAAAAIAAAA
+AAAAgAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAIAAAAAAAAAAAAACAAAAAAAAAAAAAAgAAAACAAAAAA
+AAAAAgBAwAABEDBAAAAAIIAAAgggAAAAAAAAAAAAAAAAAAAAAAACCCCAAAIAAAAAAAgggAACCAAA
+AAAAIIAAAgggAAAAAACAAAIIIIAAAABAwAABEDBAAAAAAAAAAP4AAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQMAAARAwAAEEEEAAAQQQ
+QAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAA
+AQQgAAEGEAACDGAAAxjAAAYwgAEMYAADGMAABjCAAQxgAAMYwAAGMIABDGAAAxjAAAYwgAEMYAAD
+GMAABjCAAQxgAAMYwAAGMIABDGAAAxjAAAYwgAEMYAABCEAAAhCAAAQgAAEIQAACEIAABCAAAQhA
+AAIQgAAEIDYAAQhAAAIQgAAEIAABCEAAAhCAAAQgAAEIQAACEIAABCAAAQhAAAIQgAAEIAABCEAA
+AhCABAAAOw==
+
+------=_NextPart_000_00C9_01CBE1BB.CF7FBC20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.validlab.com/goldberg/geq.gif
+
+R0lGODdhCQAJAPAAAAAAAP///ywAAAAACQAJAAACD4yPAYmwbByMTB73ZsI4FAA7
+
+------=_NextPart_000_00C9_01CBE1BB.CF7FBC20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.validlab.com/goldberg/leq.gif
+
+R0lGODdhCgAKAPAAAAAAAP///ywAAAAACgAKAAACD4yPqQoLnZ5bR9Lw4K3ZFgA7
+
+------=_NextPart_000_00C9_01CBE1BB.CF7FBC20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.validlab.com/goldberg/pm.gif
+
+R0lGODdhCgAKAPAAAAAAAP///ywAAAAACgAKAAACD4yPqQhr7SADtCp5Xay2AAA7
+
+------=_NextPart_000_00C9_01CBE1BB.CF7FBC20--

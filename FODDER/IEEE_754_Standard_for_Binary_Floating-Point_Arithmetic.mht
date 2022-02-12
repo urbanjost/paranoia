@@ -1,0 +1,304 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: IEEE 754: Standard for Binary Floating-Point Arithmetic
+Date: Sun, 13 Mar 2011 20:19:59 -0400
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_00D4_01CBE1BC.069BB4C0"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5931
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_00D4_01CBE1BC.069BB4C0
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://grouper.ieee.org/groups/754/
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- -*- xml -*- --><HTML =
+xmlns=3D"http://www.w3.org/1999/xhtml"><HEAD><TITLE>IEEE 754: Standard =
+for Binary Floating-Point Arithmetic</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META content=3D"E. Jason Riedy <jason@acm.org>" name=3DAuthor>
+<META content=3D"IEEE 754, digital arithmetic standard" name=3Dkeywords>
+<META=20
+content=3D"IEEE 754-1985 and 854-1987 govern floating-point arithmetic.  =
+This page contains informative material related to these standards and =
+the on-going revision."=20
+name=3Ddescription><LINK =
+href=3D"http://grouper.ieee.org/groups/754/754.css"=20
+rel=3Dstylesheet>
+<META content=3D"MSHTML 6.00.6000.17095" name=3DGENERATOR></HEAD>
+<BODY>
+<H1 class=3Dtitle>IEEE 754: Standard for Binary Floating-Point =
+Arithmetic</H1>
+<DIV class=3Dcontents>
+<P><A =
+href=3D"http://ieeexplore.ieee.org/servlet/opac?punumber=3D4610933">IEEE =
+
+754-2008</A> governs binary floating-point arithmetic. It specifies =
+number=20
+formats, basic operations, conversions, and exceptional conditions. The =
+2008=20
+edition supersedes both the <A=20
+href=3D"http://ieeexplore.ieee.org/servlet/opac?punumber=3D2355">754-1985=
+</A>=20
+standard and the related <A=20
+href=3D"http://ieeexplore.ieee.org/servlet/opac?punumber=3D2502">IEEE =
+854-1987</A>=20
+which generalized 754-1985 to cover decimal arithmetic as well as =
+binary. </P>
+<P>Note that materials provided on this page and sub-pages are =
+<EM>not</EM>=20
+approved as IEEE standards. The current, approved standard is <A=20
+href=3D"http://ieeexplore.ieee.org/servlet/opac?punumber=3D2355">754-2008=
+</A>. The=20
+materials provided through this page are purely informative. The <A=20
+href=3D"http://ieeexplore.ieee.org/servlet/opac?punumber=3D2355">standard=
+ itself</A>=20
+is the official document. </P>
+<P>There is a <A=20
+href=3D"http://grouper.ieee.org/groups/754/email/threads.html">mailing =
+list</A> at=20
+<TT>stds-754@ieee.org</TT> that supports the standard. Nothing on that =
+list is=20
+an official interpretation, but the list can be an excellent way to =
+reach people=20
+involved in 754. To join the list, send the message text "<TT>subscribe=20
+stds-754</TT>" to <TT>listserv@listserv.ieee.org</TT>. </P>
+<H1 style=3D"COLOR: red"><A name=3Dother-groups>Related Groups</A></H1>
+<P>Consider assisting the <A=20
+href=3D"http://standards.ieee.org/announcements/intervalarith.html">inter=
+val=20
+standardization effort</A>. Instructions for getting involved are =
+available=20
+through <A =
+href=3D"http://www.cs.utep.edu/interval-comp/standard.html">Interval=20
+Computations web site</A>. Their mailing list archive is <A=20
+href=3D"http://grouper.ieee.org/groups/1788/email/">hosted by the =
+IEEE</A>. </P>
+<DIV id=3Dnextmeeting>
+<H2>Next Meeting</H2>
+<DL>
+  <DT><B>NONE</B>=20
+  <DD>Standard has been published. </DD></DL>
+<P=20
+style=3D"PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; =
+MARGIN: 0px; PADDING-TOP: 0px; TEXT-ALIGN: left">Consider=20
+assisting the <A=20
+href=3D"http://standards.ieee.org/announcements/intervalarith.html">inter=
+val=20
+standardization effort</A>. Instructions for getting involved are =
+available=20
+through <A =
+href=3D"http://www.cs.utep.edu/interval-comp/standard.html">Interval=20
+Computations web site</A>. Their mailing list archive is <A=20
+href=3D"http://grouper.ieee.org/groups/1788/email/">hosted by the =
+IEEE</A>. </P><!--=0A=
+	<p style=3D"text-align: left; padding: 0; margin: 0;">=0A=
+	  Check <a href=3D"email/threads.html">list</a> for conference call =
+information.=0A=
+	  <a href=3D"revision.html#future-meetings">More...</a>=0A=
+	</p>=0A=
+--><!--=0A=
+<p><a =
+href=3D"http://feeds.technorati.com/events/http%3A%2F%2Fgrouper.ieee.org%=
+2Fgroups%2F754%2Frevision.html">Upcoming meetings in ical</a>, as a <a =
+href=3D"webcal://feeds.technorati.com/events/http%3A%2F%2Fgrouper.ieee.or=
+g%2Fgroups%2F754%2Frevision.html">webcal feed</a> (experimental <a =
+href=3D"http://technorati.com/events/">Technorati</a> service).</p>=0A=
+--></DIV>
+<H1><A name=3Drevision>Revision</A></H1>
+<P>The standard recently underwent <A=20
+href=3D"http://grouper.ieee.org/groups/754/revision.html">revision</A>.=20
+Participants enganged in mortal combat during meetings in the San =
+Francisco Bay=20
+area. The <A =
+href=3D"http://grouper.ieee.org/groups/754/revision.html">revision=20
+page</A> summarizes some of the effort. The <A=20
+href=3D"http://grouper.ieee.org/groups/754/revision.html#mailing-list">ma=
+iling=20
+list</A> tracks discussions from that time. </P>
+<H1><A name=3Dreadings>Reading Material</A></H1>
+<P>Some answers to <A=20
+href=3D"http://grouper.ieee.org/groups/754/faq.html">frequently asked=20
+questions</A> are available. A <A=20
+href=3D"http://grouper.ieee.org/groups/754/reading.html">large amount of =
+
+material</A>, online and dead-tree, has accumulated over the years. The =
+earlier=20
+publications provide rationale for the previous standard, IEEE 754-1985. =
+</P>
+<P>Good, on-line works include the following: </P>
+<UL class=3Dloose>
+  <LI>David Goldberg's article, <A=20
+  href=3D"http://www.validlab.com/goldberg/paper.ps">What Every Computer =
+Scientist=20
+  Should Know about Floating-Point Arithmetic</A>, covers important =
+aspects of=20
+  floating-point arithmetic from the perspective of IEEE 754. Doug =
+Priest's=20
+  supplement describes many 754 implementations.=20
+  <LI><A=20
+  =
+href=3D"http://www.cs.berkeley.edu/~wkahan/ieee754status/ieee754.ps">Lect=
+ure=20
+  Notes on the Status of IEEE Standard 754 for Binary Floating-Point=20
+  Arithmetic</A> by <A class=3Dextra=20
+  href=3D"http://www.cs.berkeley.edu/~wkahan/">Prof. W. Kahan</A> =
+provides a tour=20
+  of some under-appreciated features of IEEE 754 and includes many =
+examples=20
+  where they clarify numerical algorithms.=20
+  <LI><A class=3Dextra href=3D"http://www.vinc17.org/">Lef=E8vre</A> and =
+<A=20
+  class=3Dextra =
+href=3D"http://perso.ens-lyon.fr/jean-michel.muller/">Muller</A>'s=20
+  work on the <A=20
+  =
+href=3D"http://perso.ens-lyon.fr/jean-michel.muller/Intro-to-TMD.htm">tab=
+le-maker's=20
+  dilemma</A> outlines the difficulties in specifying elementary =
+functions.=20
+  <LI><A class=3Dextra href=3D"http://www.cims.nyu.edu/~dbindel/">David =
+Bindel</A>=20
+  has collected an <A=20
+  =
+href=3D"http://www.cims.nyu.edu/~dbindel/class/cs279/dsb-bib.pdf">annotat=
+ed=20
+  bibliography</A> that lists many relevant works. </LI></UL></DIV>
+<DIV class=3Dlowernavbar>
+<P><A href=3D"http://grouper.ieee.org/groups/754/">754</A> | <A=20
+href=3D"http://grouper.ieee.org/groups/754/revision.html">revision</A> | =
+<A=20
+href=3D"http://grouper.ieee.org/groups/754/faq.html">FAQ</A> | <A=20
+href=3D"http://grouper.ieee.org/groups/754/reading.html">references</A>=20
+</P></DIV></BODY></HTML>
+
+------=_NextPart_000_00D4_01CBE1BC.069BB4C0
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://grouper.ieee.org/groups/754/754.css
+
+SPAN.yikes {
+	COLOR: red
+}
+BODY {
+	BACKGROUND: #eee; COLOR: black
+}
+BODY#halloween {
+	BACKGROUND: black; COLOR: orange
+}
+H1 {
+	FONT-FAMILY: sans-serif
+}
+H1.title {
+	BORDER-RIGHT: 0pt; PADDING-RIGHT: 1%; BORDER-TOP: 0pt; PADDING-LEFT: =
+1%; BACKGROUND: black; PADDING-BOTTOM: 1%; MARGIN: 0pt; BORDER-LEFT: =
+0pt; COLOR: white; PADDING-TOP: 1%; BORDER-BOTTOM: 0pt; TEXT-ALIGN: =
+center
+}
+DIV#nextmeeting {
+	BORDER-RIGHT: black thick solid; BORDER-TOP: black thick solid; =
+DISPLAY: block; FONT-WEIGHT: bold; BACKGROUND: #fbb; BORDER-LEFT: black =
+thick solid; COLOR: black; BORDER-BOTTOM: black thick solid
+}
+DIV.warning {
+	BORDER-RIGHT: black thick solid; BORDER-TOP: black thick solid; =
+DISPLAY: block; FONT-WEIGHT: bold; BACKGROUND: #fbb; BORDER-LEFT: black =
+thick solid; COLOR: black; BORDER-BOTTOM: black thick solid
+}
+DIV.warning {
+	PADDING-RIGHT: 3%; PADDING-LEFT: 3%; MARGIN-LEFT: 20%; MARGIN-RIGHT: =
+20%
+}
+DIV#nextmeeting {
+	FLOAT: right; WIDTH: 32%; MARGIN-RIGHT: 0pt
+}
+DIV#nextmeeting H2 {
+	BORDER-RIGHT: black 0px solid; PADDING-RIGHT: 5%; BORDER-TOP: black 0px =
+solid; MARGIN-TOP: 0pt; PADDING-LEFT: 5%; BACKGROUND: red; =
+PADDING-BOTTOM: 5%; BORDER-LEFT: black 0px solid; PADDING-TOP: 5%; =
+BORDER-BOTTOM: black thick solid; TEXT-ALIGN: center
+}
+DIV#nextmeeting H2#oct {
+	BACKGROUND: orange; COLOR: black
+}
+DIV#nextmeeting DL {
+	PADDING-RIGHT: 5%; PADDING-LEFT: 5%; LIST-STYLE-POSITION: inside; =
+PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt
+}
+DL.schedule {
+	DISPLAY: block; MARGIN-LEFT: 15%; MARGIN-RIGHT: 15%
+}
+UL.schedule {
+	DISPLAY: block; MARGIN-LEFT: 10%; MARGIN-RIGHT: 10%
+}
+.tentative {
+	COLOR: gray
+}
+DIV.contents {
+	PADDING-RIGHT: 1em; PADDING-LEFT: 1em; BACKGROUND: white; =
+PADDING-BOTTOM: 1em; MARGIN-LEFT: 15%; MARGIN-RIGHT: 15%; PADDING-TOP: =
+1em
+}
+DIV.msgcontents {
+	PADDING-RIGHT: 1em; PADDING-LEFT: 1em; BACKGROUND: white; =
+PADDING-BOTTOM: 1em; MARGIN-LEFT: 5%; MARGIN-RIGHT: 5%; PADDING-TOP: 1em
+}
+DIV.contents#halloween {
+	COLOR: black
+}
+BODY {
+	LINE-HEIGHT: 170%
+}
+DIV#nextmeeting {
+	LINE-HEIGHT: 120%
+}
+UL.loose LI {
+	MARGIN-TOP: 3%
+}
+DIV.postmatter {
+	FONT-SIZE: small
+}
+A {
+	TEXT-DECORATION: none
+}
+A.extra {
+	COLOR: black
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+H1 A:hover {
+	TEXT-DECORATION: none
+}
+H2 A:hover {
+	TEXT-DECORATION: none
+}
+A:active {
+	TEXT-DECORATION: underline
+}
+.toc A {
+	COLOR: green
+}
+.lowernavbar A {
+	COLOR: green
+}
+.toc A:visited {
+	COLOR: green
+}
+.lowernavbar A:visited {
+	COLOR: green
+}
+DL.faq DT {
+	FONT-WEIGHT: bold; FONT-FAMILY: sans-serif
+}
+.invisible {
+	DISPLAY: none
+}
+
+------=_NextPart_000_00D4_01CBE1BC.069BB4C0--

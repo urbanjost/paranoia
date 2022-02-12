@@ -1,0 +1,1853 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: Some articles
+Date: Sun, 13 Mar 2011 20:22:37 -0400
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_00D9_01CBE1BC.64E658F0"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5931
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_00D9_01CBE1BC.64E658F0
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.fortran-2000.com/ArnaudRecipes/Articles.html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" =
+"http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML lang=3Den xmlns=3D"http://www.w3.org/1999/xhtml" =
+xml:lang=3D"en"><HEAD><TITLE>Some articles</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252"><LINK=20
+href=3D"http://www.fortran-2000.com/ArnaudRecipes/recipes.css" =
+type=3Dtext/css=20
+rel=3Dstylesheet>
+<STYLE type=3Dtext/css>SPAN.c3 {
+	COLOR: #ff3300
+}
+SPAN.c2 {
+	COLOR: #666600
+}
+</STYLE>
+
+<META content=3D"MSHTML 6.00.6000.17095" name=3DGENERATOR></HEAD>
+<BODY>
+<H1 class=3Dtitle>Some articles</H1>
+<P>A series of interesting articles...</P>
+<UL>
+  <LI><A=20
+  =
+href=3D"http://www.fortran-2000.com/ArnaudRecipes/Articles.html#Alias1">F=
+ortran=20
+  vs. C++ - good reading about aliasing</A>=20
+  <LI><A=20
+  =
+href=3D"http://www.fortran-2000.com/ArnaudRecipes/Articles.html#Knoble1">=
+Advice=20
+  about floating point by Herman D. Knoble</A>=20
+  <LI><A=20
+  =
+href=3D"http://www.fortran-2000.com/ArnaudRecipes/Articles.html#Munro1">T=
+he=20
+  Munro post: how to trap FP exceptions</A> </LI></UL>
+<HR>
+
+<H2 id=3DAlias1>Fortran vs. C++ - good reading about aliasing</H2>
+<P>(original available at <A=20
+href=3D"http://www.oonumerics.org/oon/oon-list/archive/index.html">oon-li=
+st.archiv</A>)</P>
+<TABLE cellSpacing=3D0 cellPadding=3D2 width=3D"100%" summary=3Dartifact =
+border=3D0>
+  <TBODY vAlign=3Dtop>
+  <TR>
+    <TD align=3Dleft colSpan=3D2><STRONG>&gt;&gt;</STRONG> Forum:=20
+      <STRONG>comp.lang.fortran</STRONG><BR><STRONG>&gt;&gt;</STRONG> =
+Thread:=20
+      <STRONG>Fortran vs. C++ - good=20
+      reading</STRONG><BR><STRONG>&gt;&gt;</STRONG> Message 1 of =
+124<BR></TD></TR>
+  <TR>
+    <TD>Subject:</TD>
+    <TD><STRONG>Fortran vs. C++ - good reading</STRONG></TD></TR>
+  <TR>
+    <TD>Date:</TD>
+    <TD>03/23/2000</TD></TR>
+  <TR>
+    <TD>Author:</TD>
+    <TD><STRONG>John Molitor</STRONG> &lt;<A=20
+      =
+href=3D"mailto:molitor@stat.missouri.edu">molitor@stat.missouri.edu</A>&g=
+t;</TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=3D0 cellPadding=3D5 width=3D"100%" summary=3Dartifact =
+border=3D0>
+  <TBODY>
+  <TR>
+    <TD>
+      <P>Hello,<BR>&nbsp;<BR>For those who are interested, this post =
+from Object=20
+      Oriented Numerics List<BR>discusses Fortran vs. C++.&nbsp; The =
+Pooma and=20
+      Blitz libraries (previously discussed on the Fortran news group) =
+are=20
+      discussed and compared with Fortran. Note that these posts are =
+written by=20
+      authors of C++ libraries, so they may be slanted in favor of =
+C++.&nbsp;=20
+      Nevertheless, it is conceded that Fortran has some definite=20
+      =
+advantages.<BR>&nbsp;<BR>John<BR>----------------------------------------=
+---------------------<BR>oon-digest&nbsp;=20
+      &nbsp; &nbsp; &nbsp; &nbsp; Thursday, March 23 2000&nbsp; &nbsp; =
+&nbsp;=20
+      &nbsp; &nbsp; Volume 01 : Number =
+057<BR>&nbsp;<BR>&nbsp;<BR>&nbsp;<BR>* In=20
+      this issue:<BR>OON: Comparison between Fortran &amp; C++<BR>RE: =
+OON:=20
+      Comparison between Fortran &amp; C++<BR>Re: OON: Comparison =
+between=20
+      Fortran &amp; C++<BR>Re: OON: Comparison between Fortran &amp; =
+C++<BR>RE:=20
+      OON: Comparison between Fortran &amp; C++<BR>Re: OON: Comparison =
+between=20
+      Fortran &amp; C++<BR>RE: OON: Comparison between Fortran &amp; =
+C++<BR>Re:=20
+      OON: Comparison between Fortran &amp; C++<BR>Re: OON: Comparison =
+between=20
+      Fortran &amp; C++<BR>RE: OON: Comparison between Fortran &amp; =
+C++<BR>Re:=20
+      OON: Aliasing (was: Comparison between Fortran &amp;=20
+      =
+C++)<BR>&nbsp;<BR>-------------------------------------------------------=
+---------------<BR>&nbsp;<BR>Date:=20
+      Wed, 22 Mar 2000 09:40:13 -0700 (MST)<BR>From: Steve Karmesin=20
+      &lt;karmesin@lanl.gov&gt;<BR>Subject: OON: Comparison between =
+Fortran=20
+      &amp; C++<BR>&nbsp;<BR>This is the holy war of holy wars.&nbsp; =
+Let me try=20
+      and start it off rationally.<BR>&nbsp;<BR>I've spent the last few =
+years=20
+      working on the POOMA framework, using every trick in the book -- =
+and many=20
+      that aren't in any books -- to build general purpose scientific =
+class=20
+      libraries for high performance and parallelism.&nbsp; We're using=20
+      expression templates, lazy evaluation, cache optimizations, loop=20
+      reorderings, the whole nine yards. My team and I have worked with =
+other=20
+      folks, like Todd Veldhuizen of Blitz++ and Jeremy Siek of MTL, and =
+while I=20
+      obviously can't speak for them, the opinions below reflect =
+conversations=20
+      with them and I'm pretty confident of them.<BR>&nbsp;<BR>The basic =
+deal is=20
+      that the languages are different.&nbsp; They were conceived with =
+different=20
+      goals in mind and have different capabilities as a result.&nbsp; =
+Modern=20
+      C++ can do a lot of the things that a decade ago only made sense =
+in=20
+      FORTRAN, and modern FORTRAN can do some things that decade ago =
+didn't make=20
+      any sense at all in FORTRAN.<BR>&nbsp;<BR>There are many syntax=20
+      differences.&nbsp; FORTRAN has many ugly aspects, and C++ =
+(particularly=20
+      with templates) has its warts.&nbsp; To my eye C++ has fewer ugly =
+syntax=20
+      things and is more convenient to do complex things in.&nbsp; To =
+some=20
+      degree that is a matter of taste and the task you have to=20
+      do.<BR>&nbsp;<BR>There are more substantive differences.&nbsp; =
+Given the=20
+      forum I'll hit the things FORTRAN does well first since I think =
+those are=20
+      less well understood.<BR>&nbsp;<BR>If the only data structure you =
+need is=20
+      flat multidimensional arrays, FORTRAN does a very good job out of =
+the=20
+      box.&nbsp; With FORTRAN 90 you get array syntax (i.e. you can say =
+A=3DB+C*D=20
+      for whole arrays), which is very convenient and very difficult to =
+do well=20
+      in C++ (trust me on this).&nbsp; It is easy to match FORTRAN 77 =
+arrays in=20
+      C++, but FORTRAN 90 arrays are difficult to match.&nbsp; Not =
+completely=20
+      impossible, but it really is a Don't Try This At Home Kids(tm) =
+kind of=20
+      thing.&nbsp; At this point though you can pick up POOMA, Blitz or =
+the MTL=20
+      to do this stuff for you in C++, depending on the mix of features =
+you're=20
+      looking for.<BR>&nbsp;<BR>There is a semantic difference in =
+passing arrays=20
+      to subroutines in FORTRAN compared to C++: In FORTRAN you are =
+guaranteeing=20
+      that they are not aliased.&nbsp; This can a really big deal for =
+the=20
+      optimizer when doing numeric intensive work, and is the primary =
+remaining=20
+      factor that makes many FORTRAN programs faster than the equivalent =
+C++=20
+      programs.&nbsp; There are proposals to improve this situation in =
+C/C++=20
+      (primarily the restrict keyword at this point), but they are =
+spottily=20
+      implemented. The alternative to something like restrict is a =
+godlike=20
+      global optimizer that can figure out the aliasing, but that is way =
+in the=20
+      future for other than toy problems at this point. The bottom line, =
+sadly=20
+      enough, is that given comparably smart optimizers, under =
+circumstances=20
+      that are pretty common in scientific computing, the C/C++ =
+equivalent to a=20
+      FORTRAN program, will often not run as fast. Depending on the =
+architecture=20
+      it may not be a big difference, but it can be up to a factor of =
+two on=20
+      conventional workstations, and much larger than that on vector=20
+      machines.<BR>&nbsp;<BR>That is something FORTRAN does well, and we =
+need to=20
+      be rational about it and not be bigots.<BR>&nbsp;<BR>If we grant =
+that=20
+      modern FORTRAN does arrays better, we then have to go to the =
+things that=20
+      C++ does better.<BR>&nbsp;<BR>C++ is vastly easier to use for =
+making=20
+      exensible libraries of all kinds.&nbsp; That includes inheritance=20
+      heirarchies (which you really can't do in F90) and generic =
+libraries=20
+      (templates, which you can't do at all in F90).&nbsp; This is a =
+really big=20
+      deal, particularly for large projects. You can't do anything like =
+the STL=20
+      in FORTRAN.<BR>&nbsp;<BR>With F77, if it does what you need out of =
+the=20
+      box, you're golden.&nbsp; If you need 5% more, you're dead.&nbsp; =
+There is=20
+      a cliff at the edge of arrays and it is a long way =
+down.<BR>&nbsp;<BR>With=20
+      F90, if you need more, then in some cases you can put together the =
+data=20
+      structures to do it.&nbsp; Those data structures are nowhere near =
+as=20
+      flexible or powerful as in C++, but you have more tools available =
+than=20
+      with F77, and the arrays are convenient out of the =
+box.<BR>&nbsp;<BR>C++=20
+      is a Swiss Army Knife(tm) with a vast number of tools in it.&nbsp; =
+By=20
+      picking the appropriate tools you can do everything from device =
+drivers to=20
+      databases to nuclear weapon simulations.&nbsp; It is also true =
+that if you=20
+      pick inappropriate tools you will cut your hands off before you =
+know what=20
+      happened.&nbsp; And there are so many tools and so many completely =
+
+      different programming styles possible in C++ that it is difficult =
+to=20
+      understand the tools well enough to keep from cutting=20
+      yourself.<BR>&nbsp;<BR>Personally, I'll take that risk instead of =
+the risk=20
+      of there not being any feasible way to do what I want, which is =
+more=20
+      likely for many many problems with a language like =
+FORTRAN.<BR>&nbsp;<BR>-=20
+      -Steve Karmesin<BR>&nbsp;<BR>p.s. Please folks, no=20
+      jihads.<BR>&nbsp;<BR>Cesare Padovani writes:<BR><SPAN =
+class=3Dc2>&gt; Could=20
+      someone tell me where I can find a comparison between Fortran =
+&amp;=20
+      C++.<BR></SPAN><SPAN class=3Dc2>&gt;<BR>&gt; Best regards. Cesare=20
+      =
+Padovani.<BR></SPAN>&nbsp;<BR>------------------------------<BR>&nbsp;<BR=
+>Date:=20
+      Thu, 23 Mar 2000 09:00:34 -0800 (PST)<BR>From: Geoffrey Furnish=20
+      &lt;furnish@actel.com&gt;<BR>Subject: RE: OON: Comparison between =
+Fortran=20
+      &amp; C++<BR>&nbsp;<BR>One tiny point of =
+clarification:<BR>&nbsp;<BR>Steve=20
+      Karmesin writes:<BR><SPAN class=3Dc2>&gt; There is a semantic =
+difference in=20
+      passing arrays to subroutines in<BR>&gt; FORTRAN compared to C++: =
+In=20
+      FORTRAN you are guaranteeing that they are<BR></SPAN><SPAN =
+class=3Dc2>&gt;=20
+      not aliased.<BR></SPAN>&nbsp;<BR>Please someone correct me if what =
+I say=20
+      next is wrong, but I don't think this is really the right way to =
+say=20
+      it.&nbsp; My understanding is that the language /assumes/ array =
+parameters=20
+      to subroutines are unaliased, and allows the compiler to optimize=20
+      accordingly.&nbsp; It is actually a fairly common practice in =
+FORTRAN to=20
+      do purposeful aliasing in which you effectively redimension an =
+array=20
+      across a subroutine call site.&nbsp; For example, you may have a 3 =
+
+      dimensional array in the caller, and pass one element of it to the =
+
+      subroutine, which receives it as a 2-d array, thus taking a =
+slice.&nbsp;=20
+      Sometimes people actually do this stunt with overlapping regions, =
+and=20
+      think they'll be safe because they know how the subroutine walks =
+the=20
+      data.&nbsp; But I have a good friend who lost about 2 weeks once, =
+tracking=20
+      down a bug that turned out to be a case where Cray FORTRAN made =
+very=20
+      effective use of the presumption of nonaliasing, and was able to =
+reorder=20
+      the subroutine's code so that it would be faster, but visited the =
+elements=20
+      in a manner that was<BR>different than he expected, and so the =
+computed=20
+      output was tragically wrong, as a result of "lieing" about the non =
+
+      aliasing.&nbsp; In other words, FORTRAN doesn't guarantee that =
+arrays are=20
+      unaliased, it assumes it.&nbsp; You'd better make sure you don't =
+violate=20
+      that assumption, and yet htere are common programming styles which =
+do so=20
+      routinely.<BR>&nbsp;<BR>- --<BR>Geoffrey Furnish&nbsp; &nbsp; =
+&nbsp;=20
+      &nbsp; &nbsp; &nbsp; Actel Corporation&nbsp; &nbsp; &nbsp; &nbsp;=20
+      furnish@actel.com Senior Staff Engineer&nbsp; &nbsp; &nbsp; 955 =
+East=20
+      Arques Ave&nbsp; &nbsp; &nbsp; voice: =
+408-522-7528<BR>&nbsp;<BR>Placement=20
+      &amp; Routing&nbsp; &nbsp; Sunnyvale, CA&nbsp; 94086-4533&nbsp; =
+fax:&nbsp;=20
+      408-522-8041<BR>&nbsp;<BR>"... because only those who write the =
+code truly=20
+      control the=20
+      =
+project."<BR>&nbsp;<BR>------------------------------<BR>&nbsp;<BR>Date: =
+
+      Thu, 23 Mar 2000 11:26:36 -0600 (CST)<BR>From: Gary Kedziora=20
+      &lt;kedziora@chem.nwu.edu&gt;<BR>Subject: Re: OON: Comparison =
+between=20
+      Fortran &amp; C++<BR>&nbsp;<BR>Steve Karmesin writes:<BR><SPAN=20
+      class=3Dc2>&gt; There is a semantic difference in passing arrays =
+to=20
+      subroutines in<BR>&gt; FORTRAN compared to C++: In FORTRAN you are =
+
+      guaranteeing that they are<BR></SPAN>&nbsp;<BR><SPAN =
+class=3Dc2>&gt; not=20
+      aliased.&nbsp; This can a really big deal for the optimizer when=20
+      doing<BR>&gt; numeric intensive work, and is the primary remaining =
+factor=20
+      that makes<BR></SPAN>&nbsp;<BR><SPAN class=3Dc2>&gt; many FORTRAN =
+programs=20
+      faster than the equivalent C++ programs.&nbsp; There<BR>&gt; are =
+proposals=20
+      to improve this situation in C/C++<BR></SPAN>...<BR>&nbsp;<BR>In =
+principal=20
+      C++ should be just as fast as FORTRAN (or just as good at =
+optimizing),=20
+      right?&nbsp; Which C++ vendors are intersted in =
+this?<BR>&nbsp;<BR>I would=20
+      like to understand Steve Karmesin's point quoted above better. =
+I've seen=20
+      similar statements about aliasing in the OON literature but have =
+not seen=20
+      an in-depth discussion or references to an in-depth =
+discussion.&nbsp; Can=20
+      someone point out some references?<BR>&nbsp;<BR>Why does C++ use =
+this=20
+      aliasing?&nbsp; What is hard about removing=20
+      it?<BR>&nbsp;<BR>&nbsp;<BR>____<BR>Gary Kedziora // Department of=20
+      Chemistry // Northwestern University email: =
+kedziora@chem.nwu.edu//ph:=20
+      (847)467-4857//fax:=20
+      =
+(847)491-7713<BR>&nbsp;<BR>------------------------------<BR>&nbsp;<BR>Da=
+te:=20
+      Thu, 23 Mar 2000 11:53:38 -0600<BR>From: Jim Phillips=20
+      &lt;jim@ks.uiuc.edu&gt;<BR>Subject: Re: OON: Comparison between =
+Fortran=20
+      &amp; C++<BR>&nbsp;<BR>Geoffrey Furnish wrote:<BR><SPAN=20
+      class=3Dc2>&gt;<BR>&gt; One tiny point of =
+clarification:<BR>&gt;<BR>&gt;=20
+      Steve Karmesin writes:<BR></SPAN><SPAN class=3Dc3>&gt;&nbsp; &gt; =
+There is a=20
+      semantic difference in passing arrays to subroutines =
+in<BR>&gt;&nbsp; &gt;=20
+      FORTRAN compared to C++: In FORTRAN you are guaranteeing that they =
+
+      are<BR></SPAN><SPAN class=3Dc3>&gt;&nbsp; &gt; not =
+aliased.<BR></SPAN><SPAN=20
+      class=3Dc2>&gt;<BR>&gt; Please someone correct me if what I say =
+next is=20
+      wrong, but I don't<BR></SPAN>&nbsp;<BR><SPAN class=3Dc2>&gt; =
+words, FORTRAN=20
+      doesn't guarantee that arrays are unaliased, it=20
+      assumes<BR></SPAN>&nbsp;<BR><SPAN class=3Dc2>&gt; it.&nbsp; You'd =
+better=20
+      make sure you don't violate that assumption, and=20
+      yet<BR></SPAN>&nbsp;<BR><SPAN class=3Dc2>&gt; htere are common =
+programming=20
+      styles which do so routinely.<BR></SPAN>&nbsp;<BR>I think Steve's =
+comment=20
+      should be interpreted as "In FORTRAN you (the programmer)<BR>are=20
+      guaranteeing (to the compiler) that they (arrays) are not aliased=20
+      (and<BR>hence the compiler will make this assumption when=20
+      optimizing).<BR>&nbsp;<BR>-=20
+      =
+-Jim<BR>&nbsp;<BR>------------------------------<BR>&nbsp;<BR>Date: Thu, =
+
+      23 Mar 2000 11:24:00 -0700<BR>From: ferrell@cpca.com<BR>Subject: =
+RE: OON:=20
+      Comparison between Fortran &amp; C++<BR>&nbsp;<BR>Geoffrey Furnish =
+
+      writes:<BR><SPAN class=3Dc2>&gt; One tiny point of=20
+      clarification:<BR>&gt;<BR>&gt; Steve Karmesin =
+writes:<BR></SPAN><SPAN=20
+      class=3Dc3>&gt;&nbsp; &gt; There is a semantic difference in =
+passing arrays=20
+      to subroutines in<BR></SPAN>&nbsp;<BR><SPAN class=3Dc3>&gt;&nbsp; =
+&gt;=20
+      FORTRAN compared to C++: In FORTRAN you are guaranteeing that they =
+
+      are<BR></SPAN><SPAN class=3Dc3>&gt;&nbsp; &gt; not =
+aliased.<BR></SPAN><SPAN=20
+      class=3Dc2>&gt;<BR>&gt; Please someone correct me if what I say =
+next is=20
+      wrong, but I don't<BR>&gt; think this is really the right way to =
+say=20
+      it.&nbsp; My understanding is<BR>&gt; that the language /assumes/ =
+array=20
+      parameters to subroutines are<BR>&gt; unaliased, and allows the =
+compiler=20
+      to optimize accordingly.<BR></SPAN>&nbsp;<BR>The FORTRAN standard =
+is clear=20
+      that aliasing is not allowed.&nbsp;<BR>The standard also does not =
+allow=20
+      implicit reshaping of arrays across subroutine boundaries.&nbsp; =
+The way=20
+      to alias data is through use of pointers.&nbsp; The way to reshape =
+arrays=20
+      in through intrinsics such as RESHAPE.&nbsp; Use of pointers =
+inhibits some=20
+      optimizations, as it should. RESHAPE may or may not be efficient =
+(e.g.=20
+      logical reshaping, while leaving the data unchanged in=20
+      memory).<BR>&nbsp;<BR>Like all other languages, users are not =
+required to=20
+      write standard conforming code.&nbsp; In general, the standard =
+does not=20
+      describe the behavior of non-conforming programs.&nbsp; I'm not =
+sure what=20
+      you are driving at by saying that "FORTRAN doesn't guarantee that =
+arrays=20
+      are unaliased, it assumes it".&nbsp; The compiler doesn't =
+guarantee it,=20
+      but the standard does.&nbsp; The relevance to optimizing compilers =
+is that=20
+      FORTRAN compilers may make assumptions about aliasing, just as =
+they make=20
+      other assumptions about FORTRAN code.&nbsp; What is lacking in C++ =
+is a=20
+      standard way to tell the compiler that it's worries about aliasing =
+are=20
+      unfounded.&nbsp; Of course, use of such a pragma would not (need =
+not)=20
+      cause the compiler to guarantee that arrays weren't aliased.&nbsp; =
+As=20
+      always, users are free to make mistakes and write non-conforming=20
+      code.&nbsp; Even though FORTRAN users guarantee there is no =
+aliasing,=20
+      sometimes they (unintentionally?) lie.<BR>&nbsp;<BR>-=20
+      =
+-robert<BR>&nbsp;<BR>------------------------------<BR>&nbsp;<BR>Date:=20
+      Thu, 23 Mar 2000 13:39:33 -0500 (EST)<BR>From:=20
+      jsiek@lsc.nd.edu<BR>Subject: Re: OON: Comparison between Fortran =
+&amp;=20
+      C++<BR>&nbsp;<BR>To summarize, C++ is safe but slower (due to =
+aliasing)=20
+      and Fortran is dangerous and fast. They are both sub-optimal. =
+Neither=20
+      language allows the user to specify the aliasing behaviour, =
+instead they=20
+      make assumptions. Something like C's restrict keyword is a step in =
+the=20
+      right direction, however the restrict pointer is not a terribly =
+good match=20
+      for modern C++ and generic libraries, since they don't deal with =
+pointers,=20
+      but instead with the more abstract iterator. Last fall I began =
+working on=20
+      a several different notions of how to abstract the idea of a =
+restrict=20
+      pointer...&nbsp; then things here at SGI got a little crazy=20
+      =
+:(<BR>&nbsp;<BR>&nbsp;<BR>Cheers,<BR>&nbsp;<BR>Jeremy<BR>&nbsp;<BR>P.S.=20
+      Note that in C++ you can regain most of the lost performance by=20
+      doing<BR>some of the optimizations yourself (like loop unrolling), =
+but=20
+      that of course is a=20
+      =
+pain.<BR>&nbsp;<BR>------------------------------<BR>&nbsp;<BR>Date: =
+Thu,=20
+      23 Mar 2000 13:52:57 -0500 (EST)<BR>From: =
+jsiek@lsc.nd.edu<BR>Subject: RE:=20
+      OON: Comparison between Fortran &amp; C++<BR>&nbsp;<BR>A standard=20
+      sanctioned assumption is still an assumption ;) =
+Some<BR>assumptions are=20
+      worse than others... assumptions that can not be checked at =
+compile time=20
+      are in the "worse" category.<BR>&nbsp;<BR>ferrell@cpca.com=20
+      writes:<BR><SPAN class=3Dc2>&gt; The FORTRAN standard is clear =
+that aliasing=20
+      is not allowed.&nbsp;<BR>The &gt; standard also does not allow =
+implicit=20
+      reshaping of arrays across<BR>&gt; subroutine boundaries.&nbsp; =
+The way to=20
+      alias data is through use of<BR>&gt; pointers.&nbsp; The way to =
+reshape=20
+      arrays in through intrinsics such as<BR>&gt; RESHAPE.&nbsp; Use of =
+
+      pointers inhibits some optimizations, as it should.<BR>&gt; =
+RESHAPE may or=20
+      may not be efficient (e.g. logical reshaping, while<BR>&gt; =
+leaving the=20
+      data unchanged in memory).<BR>&gt;<BR>&gt; Like all other =
+languages, users=20
+      are not required to write standard<BR>&gt; conforming code.&nbsp; =
+In=20
+      general, the standard does not describe the<BR>&gt; behavior of=20
+      non-conforming programs.&nbsp; I'm not sure what you are<BR>&gt; =
+driving=20
+      at by saying that "FORTRAN doesn't guarantee that arrays =
+are<BR>&gt;=20
+      unaliased, it assumes it".&nbsp; The compiler doesn't guarantee =
+it,=20
+      but<BR>the</SPAN> <SPAN class=3Dc2>&gt; standard does.&nbsp; The =
+relevance=20
+      to optimizing compilers is that FORTRAN<BR></SPAN>&nbsp;<BR><SPAN=20
+      class=3Dc2>&gt; compilers may make assumptions about aliasing, =
+just as they=20
+      make other<BR></SPAN><SPAN class=3Dc2>&gt; assumptions about =
+FORTRAN=20
+      code.&nbsp; What is lacking in C++ is a =
+standard<BR></SPAN>&nbsp;<BR><SPAN=20
+      class=3Dc2>&gt; way to tell the compiler that it's worries about =
+aliasing=20
+      are<BR>&gt; unfounded.&nbsp; Of course, use of such a pragma would =
+not=20
+      (need not) cause<BR></SPAN><SPAN class=3Dc2>&gt; the compiler to =
+guarantee=20
+      that arrays weren't aliased.&nbsp; As always,<BR>&gt; users are =
+free to=20
+      make mistakes and write non-conforming code.&nbsp; Even<BR>&gt; =
+though=20
+      FORTRAN users guarantee there is no aliasing, sometimes =
+they<BR>&gt;=20
+      (unintentionally?)=20
+      =
+lie.<BR></SPAN>&nbsp;<BR>------------------------------<BR>&nbsp;<BR>Date=
+:=20
+      Thu, 23 Mar 2000 11:54:44 -0700<BR>From: =
+ferrell@cpca.com<BR>Subject: Re:=20
+      OON: Comparison between Fortran &amp; C++<BR>&nbsp;<BR>Gary =
+Kedziora=20
+      writes:<BR><SPAN class=3Dc2>&gt;<BR>&gt; Steve Karmesin=20
+      writes:<BR></SPAN><SPAN class=3Dc3>&gt; &gt; There is a semantic =
+difference=20
+      in passing arrays to subroutines in<BR>&gt; &gt; FORTRAN compared =
+to C++:=20
+      In FORTRAN you are guaranteeing that they are<BR></SPAN><SPAN=20
+      class=3Dc3>&gt; &gt; not aliased.&nbsp; This can a really big deal =
+for the=20
+      optimizer when doing<BR></SPAN><SPAN class=3Dc3>&gt; &gt; numeric =
+intensive=20
+      work, and is the primary remaining factor that =
+makes<BR></SPAN><SPAN=20
+      class=3Dc3>&gt; &gt; many FORTRAN programs faster than the =
+equivalent C++=20
+      programs. There<BR></SPAN><SPAN class=3Dc3>&gt; &gt; are proposals =
+to=20
+      improve this situation in C/C++<BR></SPAN><SPAN class=3Dc2>&gt;=20
+      ...<BR>&gt;<BR>&gt; In principal C++ should be just as fast as =
+FORTRAN (or=20
+      just as<BR>&gt; good at optimizing), right?&nbsp; Which C++ =
+vendors are=20
+      intersted in this?<BR></SPAN>&nbsp;<BR><SPAN =
+class=3Dc2>&gt;<BR>&gt; I would=20
+      like to understand Steve Karmesin's point quoted above=20
+      better<BR></SPAN><SPAN class=3Dc2>&gt; I've seen similar =
+statements about=20
+      aliasing in the OON literature<BR>&gt; but have not seen an =
+in-depth=20
+      discussion or references to an in-depth<BR></SPAN>&nbsp;<BR><SPAN=20
+      class=3Dc2>&gt; discussion.&nbsp; Can someone point out some=20
+      references?<BR>&gt;<BR>&gt; Why does C++ use this aliasing?&nbsp; =
+What is=20
+      hard about removing it?<BR></SPAN>&nbsp;<BR>Aliasing shows up in =
+ANSI C,=20
+      and is not intrinsically associated with OO programming.&nbsp; It =
+shows up=20
+      because it is damn useful.<BR>&nbsp;<BR>Here's an=20
+      example:<BR>&nbsp;<BR>&nbsp; &nbsp; &nbsp; &nbsp; float a[100],=20
+      *b;<BR>&nbsp; &nbsp; &nbsp; &nbsp; b =3D &amp;a[1];<BR>&nbsp; =
+&nbsp; &nbsp;=20
+      &nbsp; do_the_nasty_math_thing(a,b,99)<BR>&nbsp;<BR>&nbsp; void=20
+      do_the_nasty_math_thing(float *a, float *b, int n)<BR>&nbsp; =
+&nbsp;=20
+      {&nbsp; int i;<BR>&nbsp; &nbsp; &nbsp; &nbsp; for =
+(i=3D0;i&lt;n;i++)=20
+      {<BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; b[i] =3D b[i] +=20
+      a[i];<BR>&nbsp; &nbsp; &nbsp; &nbsp; }<BR>&nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+      return<BR>&nbsp; &nbsp; }<BR>&nbsp;<BR>Given how b was assigned it =
+would=20
+      be quite incorrect of the compiler to assume that the computation =
+of=20
+      iteration i is independent of the computation of iteration =
+i+1.&nbsp; But=20
+      an optimizing compiler quite likely would like to do=20
+      that.<BR>&nbsp;<BR>The FORTRAN standard dictates that arguments =
+which=20
+      refer to the same thing (e.g. &amp;b[0] =3D=3D &amp;a[1]) may not =
+be assigned=20
+      in the subroutine. Thus a FORTRAN compiler could optimize the =
+for() loop,=20
+      and it would be a user error to call it with overlapping =
+arguments, as I=20
+      did above. There is no similar restriction on C users, so certain=20
+      optimizations may not be performed by C (or C++) =
+compilers.<BR>&nbsp;<BR>-=20
+      =
+-robert<BR>&nbsp;<BR>------------------------------<BR>&nbsp;<BR>Date:=20
+      Thu, 23 Mar 2000 19:24:19 GMT<BR>From: Jacek Generowicz=20
+      &lt;jmg@ecs.soton.ac.uk&gt;<BR>Subject: Re: OON: Comparison =
+between=20
+      Fortran &amp; C++<BR>&nbsp;<BR><SPAN class=3Dc2>&gt; Why does C++ =
+use this=20
+      aliasing?<BR></SPAN>&nbsp;<BR>Because it admits pointers. As soon =
+as you=20
+      have done that, you cannot guarantee that any given chunk of data =
+isn't=20
+      being referred to by some pointer or other, which has the =
+potential to=20
+      mess with those data.<BR>&nbsp;<BR><SPAN class=3Dc2>&gt; What is =
+hard about=20
+      removing it?<BR></SPAN>&nbsp;<BR>If you remove pointers from C, it =
+would=20
+      no longer be C (it would be much like FORTRAN with different =
+syntax) and=20
+      fans of the language might object . .=20
+      =
+.<BR>&nbsp;<BR>Jacek<BR>&nbsp;<BR>------------------------------<BR>&nbsp=
+;<BR>Date:=20
+      Thu, 23 Mar 2000 12:54:44 -0700<BR>From: =
+ferrell@cpca.com<BR>Subject: RE:=20
+      OON: Comparison between Fortran &amp; =
+C++<BR>&nbsp;<BR>jsiek@lsc.nd.edu=20
+      writes:<BR><SPAN class=3Dc2>&gt;<BR>&gt; A standard sanctioned =
+assumption is=20
+      still an assumption ;) Some<BR>&gt; assumptions are worse than =
+others...=20
+      assumptions that can not be<BR>&gt; checked at compile time are in =
+the=20
+      "worse" category.<BR></SPAN>&nbsp;<BR>FORTRAN does not make any=20
+      assumptions about programs.&nbsp; The standard defines the =
+behavior of=20
+      conforming programs.&nbsp; It does not define the behavior for=20
+      non-conforming programs (except for limited requirement to =
+identify syntax=20
+      errors and a few other conformance requirements). That is an =
+important and=20
+      deliberate feature of the language.&nbsp; For instance, some =
+FORTRAN=20
+      compilers have a flag which indicates that the code to be compiled =
+uses=20
+      array aliasing.&nbsp; Such a compiler is still FORTRAN compliant- =
+even=20
+      though it will produce correct results for non-compliant programs, =
+it also=20
+      produces correct results for standard-conforming=20
+      programs.<BR>&nbsp;<BR>Thus, it is worth realizing that FORTRAN is =
+
+      different from languages which do make assumptions about user =
+code.&nbsp;=20
+      The standard is deliberately permissive, for better and for =
+worse.&nbsp;=20
+      That is very much in accordance with standard mathematical=20
+      terminology.&nbsp; 0/x is defined for x/=3D0.&nbsp; There is no =
+assumption=20
+      that x/=3D0.&nbsp; Merely the expression is not defined for that=20
+      case.<BR>&nbsp;<BR>-=20
+      =
+-robert<BR>&nbsp;<BR>------------------------------<BR>&nbsp;<BR>Date:=20
+      Thu, 23 Mar 2000 15:01:55 -0500 (EST)<BR>From: Todd Veldhuizen=20
+      &lt;tveldhui@extreme.indiana.edu&gt;<BR>Subject: Re: OON: Aliasing =
+(was:=20
+      Comparison between Fortran &amp; C++)<BR>&nbsp;<BR><SPAN =
+class=3Dc2>&gt; I=20
+      would like to understand Steve Karmesin's point quoted above=20
+      better.<BR></SPAN>&nbsp;<BR><SPAN class=3Dc2>&gt; I've seen =
+similar=20
+      statements about aliasing in the OON literature<BR>&gt; but have =
+not seen=20
+      an in-depth discussion or references to an in-depth<BR>&gt;=20
+      discussion.&nbsp; Can someone point out some =
+references?<BR>&gt;<BR>&gt;=20
+      Why does C++ use this aliasing?&nbsp; What is hard about removing=20
+      it?<BR></SPAN>&nbsp;<BR>Oh boy!&nbsp; An essay question!&nbsp;=20
+      :-)<BR>&nbsp;<BR>I am still figuring aliasing out, so consider all =
+of this=20
+      material under a "I may yet be ignorant"-type=20
+      disclaimer.<BR>&nbsp;<BR>Outline:<BR>&nbsp;<BR>1.&nbsp; What is=20
+      aliasing<BR>2.&nbsp; Examples of optimizations which are =
+hard/impossible=20
+      because of &nbsp; &nbsp; aliasing<BR>&nbsp; &nbsp; (a) Reordering=20
+      loads/stores<BR>&nbsp; &nbsp; (b) Loop-invariant code =
+motion/PRE<BR>&nbsp;=20
+      &nbsp; (c) Constant/copy propagation through the store<BR>3.&nbsp; =
+
+      Remedies<BR>&nbsp; &nbsp; (a) Alias analysis<BR>&nbsp; &nbsp; (b)=20
+      Command-line options<BR>&nbsp; &nbsp; (c) restrict<BR>&nbsp; =
+&nbsp; (d)=20
+      valarray<BR>&nbsp; &nbsp; (e) Hardware =
+solutions<BR>&nbsp;<BR>&nbsp;<BR>1.=20
+      What is aliasing<BR>&nbsp;<BR>Variables are aliases if they refer =
+to=20
+      overlapping storage locations.&nbsp; A simple example =
+is:<BR>&nbsp;<BR>int=20
+      x =3D 0;<BR>int* p =3D &amp;x;<BR>*p =3D 10;<BR>int y =3D x + =
+1;<BR>&nbsp;<BR>Both=20
+      x and *p refer to the same storage location.<BR>A naive compiler =
+which did=20
+      constant propagation without worrying about aliasing would=20
+      see<BR>&nbsp;<BR>int x =3D 0;<BR>int y =3D x + 1;<BR>&nbsp;<BR>and =
+wrongly=20
+      conclude that y =3D=3D 1.<BR>&nbsp;<BR>Aliasing is not unique to =
+C++: it is=20
+      also a problem in languages such as Java, Scheme, Fortran =
+90.&nbsp;=20
+      Fortran 77 is actually the oddball.<BR>&nbsp;<BR>Any compiler =
+which wants=20
+      to optimize C++ has to worry about aliasing. There are two types =
+of=20
+      aliasing information compilers gather:<BR>&nbsp;<BR>&nbsp;=20
+      may-alias:&nbsp; x and *p might refer to the same storage=20
+      location(s)<BR>&nbsp; must-alias: x and *p definitely DO refer to =
+the same=20
+      storage location(s)<BR>&nbsp;<BR>Performance problems are caused =
+by=20
+      may-alias information.&nbsp; If the compiler cannot prove that =
+pointers=20
+      are not aliased, then it has to assume the worst.&nbsp; Must-alias =
+
+      information is needed if the compiler wants to do e.g. =
+constant/copy=20
+      propagation through aliased pointers.<BR>&nbsp;<BR>Looking at the =
+above=20
+      example, with may-alias information the compiler would say, x and =
+*p might=20
+      alias.&nbsp; I don't know for certain that they DO alias, so the=20
+      assignment to *p invalidates anything I might know about x.&nbsp; =
+The code=20
+      after optimization would be:<BR>&nbsp;<BR>int x =3D 0;<BR>int* p =
+=3D=20
+      &amp;x;<BR>*p =3D 10;<BR>int y =3D x + 1;<BR>&nbsp;<BR>i.e. no =
+changes,=20
+      because the compiler doesn't know whether x and p actually=20
+      alias.<BR>&nbsp;<BR>With must-alias information, the compiler =
+would say, x=20
+      and *p definitely<BR>&nbsp;<BR>DO refer to the same store =
+location.&nbsp;=20
+      Then it can do constant propagation despite the =
+aliasing:<BR>&nbsp;<BR>int=20
+      x =3D 0;<BR>int* p =3D &amp;x;<BR>*p =3D 10;<BR>int y =3D=20
+      11;<BR>&nbsp;<BR>&nbsp;<BR>2.&nbsp; Examples of optimizations =
+which are=20
+      hard/impossible because of aliasing<BR>&nbsp;<BR>Here are some =
+examples of=20
+      optimizations which are difficult/impossible due to possible=20
+      aliasing:<BR>&nbsp;<BR>&nbsp;<BR>(a) Reordering=20
+      loads/stores<BR>&nbsp;<BR>Compilers get good performance on =
+numerical=20
+      kernels by "software pipelining".<BR>The basic idea is exploit =
+parallelism=20
+      by partially unrolling the inner loop.&nbsp; An=20
+      example:<BR>&nbsp;<BR>&nbsp; &nbsp; &nbsp; void daxpy(int n, =
+double a,=20
+      double* x, double* y)<BR>&nbsp; &nbsp; &nbsp; {<BR>&nbsp; &nbsp; =
+&nbsp;=20
+      &nbsp; &nbsp; for (int i=3D0; i &lt; n; ++i)<BR>&nbsp; &nbsp; =
+&nbsp; &nbsp;=20
+      &nbsp; &nbsp; y[i] =3D y[i] + a * x[i];<BR>&nbsp; &nbsp; &nbsp;=20
+      }<BR>&nbsp;<BR>After unrolling this 4 times we =
+get:<BR>&nbsp;<BR>&nbsp;=20
+      &nbsp; &nbsp; void daxpy(int n, double a, double* x, double* =
+y)<BR>&nbsp;=20
+      &nbsp; &nbsp; {<BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (int =
+i=3D0; i &lt;=20
+      n; i +=3D 4)<BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<BR>&nbsp; =
+&nbsp; &nbsp;=20
+      &nbsp; &nbsp; &nbsp; y[i]&nbsp; =3D y[i]&nbsp; + a * =
+x[i];<BR>&nbsp; &nbsp;=20
+      &nbsp; &nbsp; &nbsp; &nbsp; y[i+1] =3D y[i+1] + a * =
+x[i+1];<BR>&nbsp; &nbsp;=20
+      &nbsp; &nbsp; &nbsp; &nbsp; y[i+2] =3D y[i+2] + a * =
+x[i+2];<BR>&nbsp; &nbsp;=20
+      &nbsp; &nbsp; &nbsp; &nbsp; y[i+3] =3D y[i+3] + a * =
+x[i+3];<BR>&nbsp; &nbsp;=20
+      &nbsp; &nbsp; &nbsp; }<BR>&nbsp;<BR>&nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp; //=20
+      cleanup code for (n % 4) !=3D 0 here<BR>&nbsp; &nbsp; &nbsp;=20
+      }<BR>&nbsp;<BR>If there is no aliasing between x and y, the =
+compiler can=20
+      rearrange the loads and stores to get a good schedule.&nbsp; =
+Here's a=20
+      hand-faked version to give the idea:<BR>&nbsp;<BR>&nbsp; &nbsp; =
+&nbsp; //=20
+      fake pipelined DAXPY loop<BR>&nbsp; &nbsp; &nbsp; double* xt =3D=20
+      x;<BR>&nbsp; &nbsp; &nbsp; double* yt =3D y;<BR>&nbsp; &nbsp; =
+&nbsp; for (;=20
+      i &lt; n; i +=3D 4)<BR>&nbsp; &nbsp; &nbsp; {<BR>&nbsp; &nbsp; =
+&nbsp; &nbsp;=20
+      &nbsp; double t0 =3D yt[0] + a * xt[0];<BR>&nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+      &nbsp; double t1 =3D yt[1] + a * xt[1];<BR>&nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+      &nbsp; yt[0] =3D t0;<BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; double =
+t2 =3D yt[2]=20
+      + a * xt[2];<BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; yt[1] =3D =
+t1;<BR>&nbsp;=20
+      &nbsp; &nbsp; &nbsp; &nbsp; double t3 =3D yt[3] + a * =
+xt[3];<BR>&nbsp;=20
+      &nbsp; &nbsp; &nbsp; &nbsp; i +=3D 4;<BR>&nbsp; &nbsp; &nbsp; =
+&nbsp; &nbsp;=20
+      xt +=3D 4;<BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; yt[2] =3D =
+t2;<BR>&nbsp;=20
+      &nbsp; &nbsp; &nbsp; &nbsp; yt +=3D 4;<BR>&nbsp; &nbsp; &nbsp; =
+&nbsp; &nbsp;=20
+      yt[3] =3D t3;<BR>&nbsp; &nbsp; &nbsp; }<BR>&nbsp;<BR>This version =
+overlaps=20
+      the load/stores with floating-point computations, doing the same =
+amount of=20
+      work in fewer clock cycles.<BR>&nbsp;<BR>BUT: if x and y might =
+alias, then=20
+      the compiler cannot rearrange the loads and stores, because =
+writing y[0]=20
+      could change the value of x[1] or x[2] or x[3].<BR>&nbsp;<BR>In =
+C++ the=20
+      compiler has to assume that x and y might alias.&nbsp; Hence the =
+loads and=20
+      stores cannot be rearranged.<BR>&nbsp;<BR>The resulting =
+performance loss=20
+      is primarily a problem for in-cache problems: you can see a loss =
+of=20
+      20-50%.&nbsp; aliasing tends to be less of a problem for =
+out-of-cache=20
+      problems: memory latency tends to overwhelm the benefits of =
+software=20
+      pipelining.<BR>&nbsp;<BR>&nbsp;<BR>(b) Partial redundancy=20
+      elimination<BR>&nbsp;<BR>Partial redundancy elimination combines =
+common=20
+      subexpression<BR>elimination,<BR>loop-invariant code motion and =
+other=20
+      stuff.<BR>&nbsp;<BR>Here's a typical application: suppose we want =
+to=20
+      calculate the<BR>rank-1 update of a matrix:&nbsp; A &lt;- A + x =
+x'&nbsp;=20
+      &nbsp; (where x' =3D x transpose) We could code this in C++=20
+      as:<BR>&nbsp;<BR>&nbsp; &nbsp; &nbsp; void rank1Update(Matrix&amp; =
+A,=20
+      const Vector&amp; x)<BR>&nbsp; &nbsp; &nbsp; {<BR>&nbsp; &nbsp; =
+&nbsp;=20
+      &nbsp; &nbsp; for (int i=3D0; i &lt; A.rows(); ++i)<BR>&nbsp; =
+&nbsp; &nbsp;=20
+      &nbsp; &nbsp; &nbsp; for (int j=3D0; j &lt; A.cols(); =
+++j)<BR>&nbsp; &nbsp;=20
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A(i,j) +=3D x(i) * =
+x(j);<BR>&nbsp; &nbsp;=20
+      &nbsp; }<BR>&nbsp;<BR>For good performance, the compiler needs to =
+keep=20
+      x(i) in a register instead of reloading it constantly in the inner =
+loop.=20
+      However, the compiler can't be sure that the data in the matrix A =
+doesn't=20
+      overlap the data in the vector x -- there is a possibility that =
+writing to=20
+      A(i,j) could change the value of x(i) partway through. This might =
+be=20
+      impossible given the design of the Matrix and Vector classes, but =
+the=20
+      compiler doesn't know that. The remote possibility of aliasing =
+forces the=20
+      compiler to generate inefficient code.<BR>&nbsp;<BR>&nbsp;<BR>(c) =
+Constant=20
+      and copy propagation through the store =
+(heap/stack)<BR>&nbsp;<BR>In C++ we=20
+      often have lots of objects kicking around.&nbsp; This leads to the =
+
+      well-known "abstraction penalty": if you work with objects =
+(Iterator,=20
+      Complex) instead of scalars (double) and pointers (double*), =
+performance=20
+      suffers.&nbsp; Getting rid of this "abstraction penalty" requires =
+doing=20
+      constant and copy propagation through the store, to e.g. convert =
+Iterators=20
+      back into pointers, and eliminate the temporary=20
+      objects.<BR>&nbsp;<BR>Analyzing the store is greatly complicated =
+by=20
+      aliasing.&nbsp; Everytime you want to propagate something out of =
+the=20
+      store, you have to ask: could this region of the store have been =
+modified=20
+      through an aliased pointer?&nbsp; Far too often the answer is yes, =
+and you=20
+      can't do any optimization.&nbsp; For example:<BR>&nbsp;<BR>void =
+f(int*=20
+      x)<BR>{<BR>&nbsp; x[0] =3D 5;<BR>&nbsp; foo();<BR>&nbsp; y =3D 3.0 =
+*=20
+      x[0];<BR>}<BR>&nbsp;<BR>Can I assume that y =3D 15.0?<BR>Well, =
+that depends=20
+      on what happens in foo, and whether it could have access to the =
+store=20
+      locations pointed to by x.<BR>&nbsp;<BR>3.&nbsp; =
+Remedies<BR>&nbsp;<BR>(a)=20
+      Alias analysis<BR>&nbsp;<BR>In alias analysis, compilers =
+automatically=20
+      determine may-alias<BR>and/or must-alias =
+information.<BR>&nbsp;<BR>Some=20
+      forms of aliasing are ruled out by the ANSI C =
+standard.<BR>Type-based=20
+      aliasing rules stipulate (for example) that float* and double* =
+pointers=20
+      will not alias.<BR>&nbsp;<BR>Alias analysis is useful but not=20
+      perfect:<BR>- - precise alias analysis is NP-hard.&nbsp; This is =
+true even=20
+      for the crudest form of alias analysis, namely flow-insensitive =
+local=20
+      &nbsp; alias analysis (i.e. not interprocedural).&nbsp; (See [3]=20
+      below).&nbsp; So &nbsp; alias analysis is ALWAYS going to be =
+approximate,=20
+      not precise.<BR>- - ruling out aliasing of function arguments =
+requires=20
+      interprocedural, closed program analysis.&nbsp; i.e. it is NOT =
+compatible=20
+      with the separate compilation model followed by most C++ =
+compilers.&nbsp;=20
+      (for example, to solve the daxpy(..) aliasing problem describe =
+above, one=20
+      would have to analyze a complete program and prove that there are =
+no calls=20
+      to daxpy(..) for which x and y alias.&nbsp; This requires being =
+able to=20
+      examine the whole program at once.)&nbsp; Some compilers e.g. SGI =
+will do=20
+      interprocedural alias analysis (see -IPA options).<BR>- - pointers =
+
+      frequently "escape" to where the analysis cannot follow. &nbsp; =
+Example:=20
+      Invoking virtual functions, function pointers, or external &nbsp;=20
+      functions requires making a worst-case assumption about aliasing. =
+&nbsp;=20
+      Also, in C++ you have to make aliasing decisions like: does x.y.w =
+&nbsp;=20
+      alias w.e.f[4].g?&nbsp; Putting things into containers (e.g.=20
+      list&lt;T&gt;) and &nbsp; pulling them out also kills any useful =
+alias=20
+      information you might &nbsp; have had about a particular=20
+      T.<BR>&nbsp;<BR>&nbsp;<BR>(b) Command-line =
+options<BR>&nbsp;<BR>Some=20
+      compilers have options like "assume no aliasing of function =
+parameters"=20
+      which duplicate the behaviour of Fortran no-aliasing=20
+      restrictions.<BR>&nbsp;<BR>These can really blow up (as Geoffrey =
+Furnish=20
+      described) if your code happens to rely on aliasing being handled=20
+      correctly.<BR>&nbsp;<BR>&nbsp;<BR>(c) restrict<BR>&nbsp;<BR>NCEG=20
+      (Numerical C Extensions Group) designed a keyword restrict which =
+is=20
+      recognized by some C++ compilers (KAI, Cray, SGi, Intel, gcc). =
+See: <A=20
+      =
+href=3D"http://www.lysator.liu.se/c/restrict.html">http://www.lysator.liu=
+.se/c/restrict.html</A><BR>This=20
+      has been accepted into the C9x standard, so the chances of it =
+appearing in=20
+      the next C++ standard are good, assuming people can agree on what =
+it means=20
+      in C++.<BR>&nbsp;<BR>restrict is a modifier which tells the =
+compiler there=20
+      are no aliases for a store location.&nbsp; For=20
+      example:<BR>&nbsp;<BR>&nbsp; double* restrict a;<BR>&nbsp;<BR>This =
+means=20
+      that there are no aliases for any store locations accessed through =
+
+      a.&nbsp; Hence the compiler is free to rearrange load/store =
+orderings and=20
+      do other optimizations.<BR>&nbsp;<BR>Unfortunately restrict does =
+not=20
+      extend well to C++ idioms such as iterators.&nbsp; For example, I =
+cannot=20
+      say:<BR>&nbsp;<BR>Iterator restrict iter =3D =
+x.begin();<BR>&nbsp;<BR>to mean=20
+      that the data referred to by iter is not aliased by any other=20
+      iterators.&nbsp; Instead I would have to choose between:<BR>&nbsp; =
+(a)=20
+      Making the pointer inside Iterator "restrict", meaning &nbsp; that =
+I can=20
+      never use two Iterators which refer to the same container=20
+      simultaneously;<BR>&nbsp; (b) Providing two versions of Iterator, =
+one of=20
+      which is alias-free and one of which is not, for =
+example:<BR>&nbsp;=20
+      Iterator and AliasFreeIterator.<BR>&nbsp;<BR>Neither of these =
+options are=20
+      very appealing.<BR>There is also some weirdness around restrict =
+not being=20
+      an "official" part of the type.&nbsp; So Vector&lt;double*&gt; and =
+
+      Vector&lt;double* restrict&gt; would be the same template =
+instance, as far=20
+      as I understand.&nbsp; I guess this would get sorted out by the =
+standards=20
+      committee.<BR>&nbsp;<BR>(d) valarray<BR>&nbsp;<BR>Restrict never =
+made it=20
+      into the ISO/ANSI C++ standard.&nbsp; There is however this =
+statement=20
+      about valarray:<BR>&nbsp;<BR>&nbsp; 2 The valarray array classes =
+are=20
+      defined to be free of<BR>&nbsp; &nbsp; certain forms&nbsp; of =
+aliasing,=20
+      thus allowing operations<BR>&nbsp; &nbsp; on these classes to be=20
+      optimized.<BR>&nbsp;<BR>I don't know of any compiler which makes =
+use of=20
+      this information.<BR>&nbsp;<BR>(e) Hardware =
+solutions<BR>&nbsp;<BR>The new=20
+      IA-64 processor architecture has "data speculative loads" which =
+may solve=20
+      aliasing performance problems in hardware.&nbsp; The idea is to =
+allow=20
+      loads to be optimistically moved before stores, despite possible=20
+      aliasing.&nbsp; The processor determines on the fly if a =
+subsequent store=20
+      invalidates the load, and cancels it.<BR>&nbsp;<BR>Here's an =
+example from=20
+      the specs.&nbsp; Code before optimization:<BR>&nbsp;<BR>st8&nbsp; =
+[r4] =3D=20
+      r12&nbsp; &nbsp; &nbsp; &nbsp; // Store contents of r12 at =
+location [r4]=20
+      ld8&nbsp; r6 =3D [r8];;&nbsp; &nbsp; &nbsp; &nbsp; // Load from =
+location=20
+      [r8] to r6<BR>add&nbsp; r5 =3D r6, r7;;<BR>st8&nbsp; [r18] =3D =
+r5&nbsp; &nbsp;=20
+      &nbsp; &nbsp; // Store r5 at [r18]<BR>&nbsp;<BR>IA-64's "data =
+speculation"=20
+      lets you move the load before the store. The load is split into =
+two=20
+      instructions: ld8.a, an "advanced load", and "ld8.c.clr" the =
+"check load +=20
+      clear":<BR>&nbsp;<BR>ld8.a&nbsp; r6 =3D [r8];;&nbsp; &nbsp; &nbsp; =
+//=20
+      advanced load<BR>st8&nbsp; &nbsp; [r4] =3D r12<BR>ld8.c.clr r6 =3D =
+[r8]&nbsp;=20
+      &nbsp; // check load<BR>add&nbsp; &nbsp; r5 =3D r6, =
+r7;;<BR>st8&nbsp; &nbsp;=20
+      [r18] =3D r5<BR>&nbsp;<BR>The load starts when the ld8.a =
+instruction is=20
+      reached.&nbsp; When the check instruction ld8.c.clr is reached, if =
+the=20
+      store clobbered the advanced load, then the load is done a second=20
+      time.&nbsp; Otherwise it is a nop. The IA-64 has a special =
+hardware table=20
+      where it checks stores against advanced loads.<BR>&nbsp;<BR>So it =
+might=20
+      solve the problem we have now of software pipelining loops in the =
+presence=20
+      of aliasing.&nbsp; If there is aliasing, your code will =
+"magically" run=20
+      slower because of the check loads failing and re-issuing the =
+loads.&nbsp;=20
+      If there isn't aliasing, the check loads will be no-ops.&nbsp; I =
+don't=20
+      know whether the check loads introduce latency or muck up the=20
+      scheduling.<BR>&nbsp;<BR>&nbsp;<BR>More info:<BR>[1] Advanced =
+Compiler=20
+      Design &amp; Implementation, Steven S. Muchnick, Chapter 10 &nbsp; =
+(Alias=20
+      Analysis)<BR>[2] NCEG restrict proposal: <A=20
+      =
+href=3D"http://www.lysator.liu.se/c/restrict.html">http://www.lysator.liu=
+.se/c/restrict.html</A><BR>[3]=20
+      Precise Flow-Insensitive May-Alias Analysis is NP-Hard, Susan =
+Horwitz, <A=20
+      =
+href=3D"http://www.acm.org/pubs/citations/journals/toplas/1997-19-1/p1-ho=
+rwitz/">http://www.acm.org/pubs/citations/journals/toplas/1997-19-1/p1-ho=
+rwitz/</A><BR>[4]=20
+      restrict in C9x &nbsp; <A=20
+      =
+href=3D"http://www.accu.org/events/public/c_news.htm">http://www.accu.org=
+/events/public/c_news.htm</A><BR>[5]=20
+      IA-64 Application Developer's Architecture Guide<BR>&nbsp; &nbsp; =
+Section=20
+      4.4.5: Data Speculation &nbsp; <A=20
+      =
+href=3D"http://developer.intel.com/design/ia-64/downloads/adag.htm">http:=
+//developer.intel.com/design/ia-64/downloads/adag.htm</A><BR>&nbsp;<BR>- =
+
+      --<BR>Todd Veldhuizen&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+      tveldhui@acm.org<BR>Indiana Univ. Comp. Sci.&nbsp; &nbsp; &nbsp; =
+<A=20
+      =
+href=3D"http://extreme.indiana.edu/~tveldhui/">http://extreme.indiana.edu=
+/~tveldhui/</A><BR>&nbsp;<BR>------------------------------<BR>&nbsp;<BR>=
+End=20
+      of oon-digest V1=20
+      #57<BR>************************<BR>&nbsp;<BR>--------------------- =
+Object=20
+      Oriented Numerics List<BR>--------------------------<BR>* To=20
+      subscribe/unsubscribe: use the handy web form at<BR><A=20
+      =
+href=3D"http://oonumerics.org/oon/">http://oonumerics.org/oon/</A><BR>* =
+If=20
+      this doesn't work, please send a note=20
+      to<BR>owner-oon-list@oonumerics.org</P></TD></TR></TBODY></TABLE>
+<HR>
+
+<H2 id=3DKnoble1>Advice about floating point by Herman D. Knoble</H2>
+<P>(<A=20
+href=3D"http://groups.google.com/groups?selm=3De8jfrs4q76ofoa3qdcpppt9s7i=
+09pfelg6%404ax.com">original=20
+post</A>)</P><PRE>From: Herman D. Knoble &lt;hdk@psu.edu&gt;
+Newsgroups: comp.lang.fortran
+Subject: Re: ? How to have a FORTRAN function emulate flops for desired =
+digits
+Date: Thu, 07 Sep 2000 14:30:13 -0400
+Organization: Penn State University Center for Academic Computing
+Lines: 138
+Message-ID: &lt;e8jfrs4q76ofoa3qdcpppt9s7i09pfelg6@4ax.com&gt;
+References: &lt;39B50161.C0D18525@yahoo.com&gt;
+Reply-To: hdk@psu.edu
+NNTP-Posting-Host: hdknt.cac.psu.edu
+Mime-Version: 1.0
+Content-Type: text/plain; charset=3Dus-ascii
+Content-Transfer-Encoding: 7bit
+X-Authinfo-User: hdk@psu.edu
+X-Newsreader: Forte Agent 1.8/32.548
+
+One technique to illustrate to students how significant digits can =
+affect
+computations is to use examples which break down very quickly
+and drastically. (Worse yet are ones which break down more subtly!)
+=20
+Back in '93 John R. Ehrman (then at IBM Santa Teresa Labs) and
+I did a back to back presentation at Share 75 (See Proceedings of=20
+Share 75) on this topic. John presented an excellent "Floating-point
+Numbers and Arithmetic Tutorial showing the various models and
+implementations and how arithmetic really breaks down. My presentation,
+there was "Reality of REAL Arithmetic's Really Wrong Results". The
+following example is from that presentation and has been for
+us, a fairly good teaching example that you don't need to=20
+limit how many digits participate in the model to make a point.
+
+!
+!=3D=3D=3D Example 1: Numeric breakdown for IEEE Arithmetic
+! (or worse yet for IBM 360 Floating-point arithmetic).
+!    For example try: A=3D1000000., X=3D0.0000001
+!    and see P computed as: 4534650. in Single Precision
+!                       or: 4768372. in Double Precision.
+!    Note that P is algebraically equal to 1.0 for all A and X&lt;&gt;0.
+!
+!  Penn State University Center for Academic Computing
+!  H. D. Knoble, August 1979.
+       REAL (KIND=3D1) P,A,X
+       DO I=3D1,99999
+         WRITE(6,*) 'Please enter A and X (or press Enter to Quit):'
+         WRITE(6,*) '(Try values 10000., 0.0001, then 0.0001, 10000.)'
+         READ(5,*,END=3D99) A,X
+         IF (A.EQ.0 .OR. X.EQ.0) GOTO 99
+         P=3D((A+X)**2 - A**2 - 2.*A*X)/X**2
+         WRITE(6,100) P,A,X
+100      FORMAT(' P=3D',G14.7,' A=3D',G14.7,' X=3D',G14.7)
+       ENDDO
+99     WRITE(6,*) '** Example 1 Ended **'
+       PAUSE
+       STOP
+       END                                        =20
+
+Interesting enough, the bigger the "spread" of A and X in general the =
+bigger
+the "wrong" answer. However essentially a decent result is computed even
+with a very large spread between A and X if the rolls of A and X are
+reversed (X large, A, small). The problem here of course is subtracting =
+nearly
+equal quantities which are formed by converting decimal numbers that =
+have
+infinite binary expansions; when subtracting nearly equal quantities, =
+the
+most significant digits cancel during the subtraction, thus shifting the =
+"noise"
+toward the most significant digits. Then dividing by X**2 is like =
+multiplying
+the "noise" by a very large number (scaling it up).  "Really wrong =
+results"
+here illustrate with very little arithmetic so-called "significance =
+loss".  =20
+
+A second part to a student exercise studying such an example (like the =
+one
+above or one using the so-called "calculator formula" for Standard =
+Deviation
+which subtracts two sums that will be nearly equal for a small Standard =
+Deviation)
+is to make a set of "recommendations" to help avoid numerical =
+computational
+difficulties. My undergrad students, working as a team,  back in 1993 =
+came up with:
+
+1) Use Proven (refereed or commercial) library programs  that are as =
+robust=20
+(give the right result or an error message if not) as possible. For =
+example,
+IMSL, NAG mathematical statistical libraries. Avoid blindly taking =
+numerical
+code from textbooks and magazines unless they are refereed or presented
+by a proven expert in numerical computations.
+
+2) Study (know) the possible domain of values that each program input=20
+quantity will take on and test each algorithm thoroughly, especially on
+the limits of that domain.  (This of course is an art in itself).
+
+3) Use at least Double Precision Arithmetic. (In more critical cases use
+multiple or quadruple precision arithmetic; see <A =
+href=3D"http://www.nersc.gov/~dhbailey/">http://www.nersc.gov/~dhbailey/<=
+/A>
+and  <A =
+href=3D"http://www.ozemail.com.au/~milleraj/">http://www.ozemail.com.au/~=
+milleraj/</A> respectively).
+
+4) For a given mantissa precision (computer) do not input or output =
+numbers
+in ASCII (or EBCDIC) format with more decimal digits than can be handled =
+by the
+conversion mapping algorithms for that precision (computer) unless you
+document that that's what you are doing.
+
+5) Use relative comparisons in place of absolute comparisons of real
+quantities. (Also note that you can also use "fuzzy" comparisons. See
+<A =
+href=3D"http://ftp.cac.psu.edu/pub/ger/fortran/hdk/eps.f90">http://ftp.ca=
+c.psu.edu/pub/ger/fortran/hdk/eps.f90</A> and <A =
+href=3D"http://ftp.cac.psu.edu/pub/ger/fortran/hdk/extfloor.for">extfloor=
+.for</A> )
+
+6) Avoid computations which are algebraically undefined (or singular) or =
+which
+develop resul;ts whose magnitudes approach or exceed machine =
+limits.E.g.,=20
+Blindly setting results of underflows to zero can yield "Really Wrong =
+Results".
+
+7) Avoid mixing Fortran INTEGER and REAL quantities without knowing how =
+they
+will be compiled. E.g., X=3DX+I**(-J) does not increment REAL typed X =
+except when
+INTEGER typed I=3D1 or INTEGER typed J=3D0 and I&lt;0.
+
+8) Do not program a numerical model beyond your competence to either =
+avoid
+significance loss or monitor it. Be especially careful when less than a =
+pre-specified
+number of mantissa digits participate in a sum or when all but a few =
+mantissa=20
+digits cancel during a subtraction. You are responsible for disasters =
+caused
+by other people using your code!
+
+I'm sure your students can come up with more and better here, especially
+along the ethics implied by the last sentence in (8) above.
+
+                        Good luck with it.
+                        Skip Knoble, Penn State
+
+
+On Tue, 05 Sep 2000 22:21:22 +0800, Cheng Cosine =
+&lt;acosine@yahoo.com&gt; wrote:
+
+-|
+-|Hi ALL:
+-|
+-|  In FORTRAN, there are two types of real floating number, single
+-|
+-|and double precision. Single precision has 6 significant digits
+-|
+-|while double precision has 16. ( when represented in 10 based )
+-|
+-|   From what I learned from some numerical analysis books, the
+-|
+-|floating point system is machine dependent. Say there are other
+-|
+-|system used in Cray and IBM mainframe that are other than the
+-|
+-|IEEE SP/DP system.
+-|
+-|   Now how can I write a FORTRAN90 code that works in lower =
+significant
+-|
+-|number only. Say only works for 3, 4, or 10 digits?
+-|
+-|  Thanks,
+-|
+-| by Cheng Cosine
+-|   Sep/05/2k UT
+-|
+
+
+   Herman D. (Skip) Knoble, Research Associate
+   Mailto:hdk@psu.edu
+   Web: <A =
+href=3D"http://www.personal.psu.edu/hdk">http://www.personal.psu.edu/hdk<=
+/A>
+   Center for Academic Computing
+   Penn State University
+     214C Computer Building
+     University Park, PA 16802-2101
+   Phone:+1 814 865-0818   Fax:+1 814 863-7049
+</PRE>
+<HR>
+
+<H2 id=3DMunro1>The Munro post: how to trap FP exceptions</H2>
+<P>In July 1999, David H. Munro posted <A=20
+href=3D"http://groups.google.com/groups?selm=3D873dy88du3.fsf%40yorick.ll=
+nl.gov">this</A>=20
+terrific document. Note that the code reproduced below has been =
+superseded and=20
+an up-to-date version can be found in the code of <A=20
+href=3D"ftp://ftp-icf.llnl.gov/pub/Yorick/">yorick</A>. However, as I =
+updated the=20
+copy below, it may still provide some useful information.</P><PRE>From: =
+munro@icf.llnl.gov (David H. Munro)
+Subject: SIGFPE delivery
+Date: 28 Jul 1999 00:00:00 GMT
+Message-ID: &lt;873dy88du3.fsf@yorick.llnl.gov&gt;
+Content-Type: text/plain; charset=3DUS-ASCII
+X-Complaints-To: abuse@lll-winken.llnl.gov
+X-Trace: lll-winken.llnl.gov 933269651 18025 128.115.36.163 (29 Jul 1999 =
+17:34:11 GMT)
+Organization: Lawrence Livermore National Laboratory
+Mime-Version: 1.0 (generated by tm-edit 7.106)
+Reply-To: munro@icf.llnl.gov
+NNTP-Posting-Date: 29 Jul 1999 17:34:11 GMT
+Newsgroups: comp.os.linux.development.system
+
+
+Hello,
+
+Like many other numerical code developers, I need to get SIGFPE
+delivered to my programs as promptly as the hardware can do so.  This
+is a crucial aid in debugging all numerical software, but in the case
+of my yorick interpreter there are serious code correctness or
+performance problems without SIGFPE delivery.
+
+Unfortunately, there is a bug built into the ANSI C signal() and POSIX
+sigaction() mechanisms on Linux and nearly every other operating
+system: Setting a signal handler for SIGFPE has no effect because when
+the system starts every program, it sets (in crt0) the exception mask
+bits in the FPU control register so that SIGFPE will never be
+delivered to the program.
+
+For years I have wondered why the signal() and sigaction() functions
+do not reset the FPE mask bits to deliver SIGFPE, since I cannot
+imagine that any program that does not need SIGFPE delivered would
+call signal() or sigaction() to set up a SIGFPE signal handler!
+Perhaps the excuse for this misbehavior is that most FPUs require
+detailed bits to be set to tell precisely which FPEs will generate
+signals: The possibilities are zero divide, invalid operation,
+overflow, underflow, inexact result, and (for some FPUs) denormalized
+operand.  However, the vast majority of numerical applications care
+about the first three and want the others ignored, so delivery of zero
+divide, invalid operation, and overflow, and non-delivery of all the
+rest is a very obvious default behavior for programs registering a
+SIGFPE handler.
+
+Here's my immediate problem:
+
+A recent GNU libc release withdrew the __setfpucw function (or, more
+correctly, made it a static function only callable by their own crt0
+code!).  This reduces anyone who wants SIGFPE delivered to duplicating
+the assembly code used by __setfpucw -- making Linux the only OS
+requiring assembly code to perform this important function.  (The only
+exception is the alpha Linux platform, which has adopted Digital's
+ieee_set_fp_control() function.  See fpuset.c below.)
+
+I was told by Cygnus support that the new fenv.h interface replaces
+the __setfpucw functionality.  I have read the C9X draft standard
+describing fenv.h very carefully, and it provides no means for setting
+the FPE mask bits -- you can use the fenv.h interface only to set,
+query, and test the bits which determine whether an exception
+condition has occurred.  Numerical software requires that the FPU
+actually generate an interrupt; it doesn't do any good to know
+something happened long afterward.  I also spoke with a Livermore
+representative on the C9X committee, who told me that delivery or
+non-delivery of any signal is not regarded as a C language issue (by
+way of an excuse for the fenv.h interface not providing this crucial
+functionality).  Unless GNU libc extends the fenv.h interface, it is
+useless.
+
+</PRE>
+<BLOCKQUOTE><PRE>Note: Most notably thanks to David Munro, glibc 2.2 and =
+later extends=20
+      C99 with feenableexcept, fedisableexcept and fegetexcept declared
+      in &lt;fenv.h&gt;.
+      Previously, _FPU_SETCW declared in &lt;fpu_control.h&gt; could be =
+used=20
+      to perform the same task.
+  -- Arnaud Desitter (August 2001)
+</PRE></BLOCKQUOTE><PRE>I suspect that the reason __setfpucw was =
+withdrawn has to do with the
+proliferation of Linux architectures.  Unfortunately, the absence of
+any standard to replace it makes my programming job substantially
+harder: I only have access to Intel Linux machines, so I have a hard
+time testing code for my favorite OS anywhere else.  If any of you can
+help me by building, testing, and correcting the enclosed test program
+on non-Intel Linux platforms, I would be extremely grateful.
+
+Any immediate help with the test program, or hope for a more rational
+interface in the future will be deeply appreciated.
+
+Dave Munro
+
+------------------------------------------------------------------------
+
+Here are two files: fpuset.c defines a function u_fpu_setup() which
+turns on SIGFPE delivery on every platform where I have a guess about
+how to do it.  fputest.c is a test driver for u_fpu_setup().  It works
+by the unusual tactic of #including the fpuset.c code, so you only
+need to compile fputest.c and run the resulting program to perform the
+test.  The following lines should work:
+
+gcc -g -O -I. fputest.c -o fputest
+./fputest
+
+The program should print
+
+SIGFPE handling works properly
+
+Any other message indicates some sort of serious problem for numerical
+software.  For example (the default behavior under Linux/Intel):
+
+$ gcc -g -O -I. -Ulinux -DFPU_IGNORE fputest.c -o fputest
+$ ./fputest
+SIGFPE handling failed on pass 1, 1./0.=3D inf
+$=20
+
+------8&gt;&lt;---------fputest.c------8&gt;&lt;-------fputest.c------8&g=
+t;&lt;-----------
+
+/*
+ * fputest.c -- test for SIGFPE delivery
+ */
+#ifdef linux
+# if defined(i386)
+#define FPU_GCC_I86
+# elif defined(alpha)
+#define FPU_ALPHA_LINUX
+# elif defined(sparc)
+#define FPU_GCC_SPARC
+# elif defined(powerpc)
+#define FPU_GCC_POWERPC
+# elif defined(m68k)
+#define FPU_GCC_M68K
+# elif defined(arm)
+#define FPU_GCC_ARM
+# endif
+#endif
+
+#ifndef NO_FPUSET
+#include "fpuset.c"
+#endif
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;signal.h&gt;
+
+#include &lt;setjmp.h&gt;
+static jmp_buf u_jmp_target;
+
+extern void u_sigfpe(int sig);
+extern double reciprocal(double x);
+extern double quotient(double x, double y);
+extern double powpow(double x, int n);
+extern int decrement(int *ip);
+static int always_true=3D 0;
+
+int main(int argc, char *argv[])
+{
+  int i=3D 5;
+  double zero=3D (double)(argc&gt;1000);
+  double huge=3D (argc&gt;1000)? 2.0 : 1.e20;
+  always_true=3D !(argc&gt;1000);
+
+  /* signal *ought* to be enough to get SIGFPE delivered
+   * -- but it never is -- see README.fpu */
+  signal(SIGFPE, &amp;u_sigfpe);
+#ifndef NO_FPUSET
+  u_fpu_setup();
+#endif
+
+  setjmp(u_jmp_target);
+  /* need to make sure that loop index i actually decrements
+   * despite interrupt */
+  while (decrement(&amp;i)) {
+    printf("SIGFPE handling failed on pass %d, 1./0.=3D %g\n", 5-i,
+           reciprocal(zero));
+    if (i) break;
+  }
+  if (!i) {
+    i=3D 5;
+    setjmp(u_jmp_target);
+    while (decrement(&amp;i)) {
+      printf("SIGFPE handling failed on pass %d, 0./0.=3D %g\n", 5-i,
+             quotient(zero, zero));
+      if (i) break;
+    }
+    if (!i) {
+      i=3D 5;
+      setjmp(u_jmp_target);
+      while (decrement(&amp;i)) {
+        printf("SIGFPE handling failed on pass %d, 10.^20480=3D %g\n", =
+5-i,
+               powpow(huge, 10));
+        if (i) break;
+      }
+      if (!i) {
+        if (setjmp(u_jmp_target)) {
+          puts("SIGFPE improperly generated on underflow");
+          i=3D 11;
+        } else {
+          double x=3D powpow(1./huge, 10);
+          if (x !=3D 0.0)
+            printf("SIGFPE handling works, but 10.^-20480=3D %g\n", x);
+          else
+            puts("SIGFPE handling works properly");
+        }
+      }
+    }
+  }
+  exit(i? 2 : 0);
+}
+
+void u_sigfpe(int sig)
+{
+  if (sig=3D=3DSIGFPE) {
+    signal(SIGFPE, &amp;u_sigfpe);
+#ifndef NO_FPUSET
+    u_fpu_setup();
+#endif
+    longjmp(u_jmp_target, 1);
+  } else {
+    puts("u_sigfpe called, but with bad parameter");
+  }
+  exit(1);
+}
+
+int decrement(int *ip)
+{
+  int i=3D *ip;
+  if (always_true) i--;
+  else i-=3D 2;
+  *ip=3D i;
+  return i&gt;0;
+}
+
+double reciprocal(double x)
+{
+  return 1./x;
+}
+
+double quotient(double x, double y)
+{
+  return x/y;
+}
+
+extern double powpow(double x, int n)
+{
+  double y=3D x;
+  while (n--) y*=3D y;
+  return y;
+}
+
+------8&gt;&lt;---------fpuset.c-------8&gt;&lt;-------fpuset.c-------8&g=
+t;&lt;-----------
+
+/*
+ * fpuset.c -- set up FPU to trap floating point exceptions
+ * - this is very non-portable, not covered by ANSI C, POSIX, or even =
+C9X
+ * - if you port to a new platform (eg- Ultrix) please contact the =
+author
+ */
+
+extern void u_fpu_setup(void);
+
+#if defined(FPU_DIGITAL) || defined(FPU_ALPHA_LINUX)
+
+/* man pages: exception_intro, ieee */
+# ifdef FPU_DIGITAL
+#  include &lt;machine/fpu.h&gt;
+# else
+   extern void ieee_set_fp_control(long);
+#  define IEEE_TRAP_ENABLE_INV 0x000002
+#  define IEEE_TRAP_ENABLE_DZE 0x000004
+#  define IEEE_TRAP_ENABLE_OVF 0x000008
+# endif
+void u_fpu_setup(void)
+{
+  ieee_set_fp_control(IEEE_TRAP_ENABLE_INV | IEEE_TRAP_ENABLE_DZE |
+                      IEEE_TRAP_ENABLE_OVF);
+}
+
+#elif defined(FPU_GCC_I86)
+
+/* see also: fpu_control.h or i386/fpu_control.h, __setfpucw function */
+void u_fpu_setup(void)
+{
+  unsigned int fpucw=3D 0x1372;
+  __asm__ ("fldcw %0" : : "m" (fpucw));
+}
+</PRE>
+<BLOCKQUOTE><PRE>  /*
+    Note: Starting glibc 2.2, one should use:
+    #define _GNU_SOURCE 1
+    #include &lt;fenv.h&gt;
+    feenableexcept(FE_INVALID | FE_DIVBYZERO | FE_OVERFLOW);
+      -- Arnaud Desitter (August 2001)
+  */
+</PRE></BLOCKQUOTE><PRE>#elif defined(FPU_GCC_POWERPC)
+
+void u_fpu_setup(void)
+{
+  unsigned int tmp[2] __attribute__ ((__aligned__(8)));
+  tmp[0] =3D 0xFFF80000; /* More-or-less arbitrary; this is a QNaN. */
+  tmp[1] =3D 0xd0;
+  __asm__ ("lfd 0,%0; mtfsf 255,0" : : "m" (*tmp) : "fr0");
+}
+
+#elif defined(FPU_GCC_SPARC)
+
+void u_fpu_setup(void)
+{
+  unsigned int fpucw=3D 0xd400000;  /* the 4 is nonstandard arithmetic =
+bit */
+  __asm__ ("ld %0,%%fsr" : : "m" (fpucw));
+}
+
+#elif defined(FPU_GCC_M68K)
+
+/* works on NeXT as well as m68k Linux */
+void u_fpu_setup(void)
+{
+  unsigned int fpucw=3D 0x7400;
+  __asm__ volatile ("fmove%.l %0, %!" : : "dm" (fpucw));
+  /* includes bit to trap on signalling NaN (may affect libm behavior) =
+*/
+}
+
+#elif defined(FPU_GCC_ARM)
+
+void u_fpu_setup(void)
+{
+  unsigned int fpucw=3D 0x70200;
+  __asm__ ("wfs %0" : : "r" (fpucw));
+  /* includes bit to trap on signalling NaN (may affect libm behavior) =
+*/
+}
+
+#elif defined(FPU_AIX)
+
+/* man pages: fp_trap, fp_enable */
+#include &lt;fptrap.h&gt;
+void u_fpu_setup(void)
+{
+  fp_trap(FP_TRAP_FASTMODE);
+  fp_enable(TRP_INVALID | TRP_DIV_BY_ZERO | TRP_OVERFLOW);
+}
+
+#elif defined(FPU_HPUX)
+
+/* man pages: fpsetmask
+ * library: -lm */
+/* HPUX turns off FP_X_* without this (_INCLUDE_HPUX_SOURCE) */
+#ifndef _HPUX_SOURCE
+#define _HPUX_SOURCE 1
+#endif
+#include &lt;math.h&gt;
+void u_fpu_setup(void)
+{
+  fpsetmask(FP_X_INV | FP_X_DZ | FP_X_OFL);  /* 0x1c */
+  fpsetfastmode(1);    /* fast underflows */
+}
+</PRE>
+<BLOCKQUOTE><PRE>  /*
+    Note: Starting HP-UX 11.0, one should use:
+    #ifndef _HPUX_SOURCE
+    # define _HPUX_SOURCE 1
+    #endif
+    #include &lt;fenv.h&gt;
+    fesettrapenable(FE_INVALID | FE_DIVBYZERO | FE_OVERFLOW);
+      -- Arnaud Desitter (August 2001)
+  */
+</PRE></BLOCKQUOTE><PRE>#elif defined(FPU_IRIX)
+
+/* man pages: handle_sigfpes, note lethal TRAP_FPE environment variable
+ * library: -lfpe
+ * note: earlier versions used get_fpc_csr/set_fpc_csr?, sys/fpu.h */
+#include &lt;sigfpe.h&gt;
+static int already_set=3D 0;
+void u_fpu_setup(void)
+{
+  if (!already_set) {
+    extern void u_sigfpe(int sig);  /* from handler.c (or fputest.c) */
+    handle_sigfpes(_ON, _EN_OVERFL|_EN_DIVZERO|_EN_INVALID,
+                   (void (*)())0, _REPLACE_HANDLER_ON_ERROR, =
+&amp;u_sigfpe);
+    already_set=3D 1;
+  }
+}
+</PRE>
+<BLOCKQUOTE><PRE>  /*
+    Another way to set the fp mask (without linking with -lfpe):
+    #include &lt;sys/fpu.h&gt;
+    union fpc_csr exp;
+    exp.fc_word =3D 0;
+    exp.fc_struct.en_invalid =3D 1;
+    exp.fc_struct.en_divide0 =3D 1;
+    exp.fc_struct.en_overflow =3D 1;
+    set_fpc_csr(exp.fc_word);
+      -- Arnaud Desitter (August 2001)
+  */
+</PRE></BLOCKQUOTE><PRE>#elif defined(FPU_SOLARIS)
+
+/* man pages: fpsetmask
+ *    Sun's -fnonstd compiler switch switches between __fnonstd.o
+ *      and __fstd.o under Solaris, as far as I can tell.  Use =
+FPU_IGNORE
+ *        if you do this.  */
+#include &lt;ieeefp.h&gt;
+void u_fpu_setup(void)
+{
+  fpsetmask(FP_X_INV | FP_X_DZ | FP_X_OFL);
+  /* this doesn't set the "nonstandard arithmetic" bit, which prevents
+   * software emulation of IEEE gradual underflow
+   * -- apparently no way to do this in libc (see FPU_GCC_SPARC) */
+}
+</PRE>
+<BLOCKQUOTE><PRE>  /*
+    Note: Sun offers an extension to C99: fex_set_handling.
+      -- Arnaud Desitter (August 2001)
+  */
+</PRE></BLOCKQUOTE><PRE>#elif defined(FPU_SUN4)
+
+/* man pages: ieee_handler
+ *               nonstandard_arithmetic is undocumented, but rumored
+ *               to be important to get rapid underflows
+ * library: -lsunmath (under /usr/lang hierarchy)
+ *          may also be in -lm (standard libm)?
+ *   note: libsunmath.a is provided by Sun only if you purchase their
+ *         compilers; if you are trying to compile with gcc on a SPARC
+ *         architecture, try FPU_GCC_SPARC
+ *    Sun's -fnonstd compiler switch buggers crt1.o under SunOS 4,
+ *      as far as I can tell.  Use FPU_IGNORE if you do this
+ *      (not possible with gcc?).  */
+static int already_set=3D 0;
+void u_fpu_setup(void)
+{
+  if (!already_set) {
+    extern void u_sigfpe(int sig);  /* from handler.c (or fputest.c) */
+    nonstandard_arithmetic();
+    ieee_handler("set","common", &amp;u_sigfpe);
+    already_set=3D 1;
+  }
+}
+
+#elif defined(FPU_UNICOS)
+
+/* delivers SIGFPE by default, this just arranges to trap on
+ * libm errors as well */
+static int already_set=3D 0;
+void u_fpu_setup(void)
+{
+  if (!already_set) {
+    int flag=3D -1;
+    libmset(&amp;flag);
+    already_set=3D 1;
+  }
+}
+
+#elif defined(FPU_MSX86)
+#include "float.h"
+#include "signal.h"
+
+  _control87(EM_DENORMAL | EM_UNDERFLOW | EM_INEXACT, MCW_EM);
+</PRE>
+<BLOCKQUOTE><PRE>  /* With MS VC++, compiling and linking with -Zi will =
+permit */
+  /* clicking to invoke the MS C++ debugger, which will show */
+  /* the point of error -- provided SIGFPE is SIG_DFL. */
+  signal(SIGFPE, SIG_DFL);
+  /*
+  From f2c source.
+    -- Arnaud Desitter (August 2001)
+  */
+</PRE></BLOCKQUOTE><PRE>#elif defined(FPU_IGNORE)
+
+void u_fpu_setup(void)
+{
+}
+
+#else
+
+#error one of the FPU_* symbols must be defined
+
+#endif
+
+------8&gt;&lt;------------------------8&gt;&lt;----------------------8&g=
+t;&lt;-----------
+</PRE>
+<HR>
+
+<P>$Id: Articles.html,v 1.32 2005/08/26 10:01:55 adesitter Exp $</P>
+<ADDRESS>Maintained by <A=20
+href=3D"http://www.fortran-2000.com/ArnaudRecipes/arnaud.html">Arnaud=20
+Desitter</A>.<BR>=A9 Arnaud Desitter 2000, 2002, 2003, 2005=20
+</ADDRESS></BODY></HTML>
+
+------=_NextPart_000_00D9_01CBE1BC.64E658F0
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.fortran-2000.com/ArnaudRecipes/recipes.css
+
+BODY {
+	FONT-FAMILY: "Trebuchet MS", Verdana, Arial, Sans-Serif; =
+BACKGROUND-COLOR: white
+}
+.title {
+	TEXT-ALIGN: center
+}
+PRE.codeExample {
+	BORDER-RIGHT: #000000 2px solid; PADDING-RIGHT: 2mm; BORDER-TOP: =
+#000000 1px solid; PADDING-LEFT: 2mm; PADDING-BOTTOM: 2mm; BORDER-LEFT: =
+#000000 1px solid; PADDING-TOP: 2mm; BORDER-BOTTOM: #000000 2px solid; =
+BACKGROUND-COLOR: #eee
+}
+
+------=_NextPart_000_00D9_01CBE1BC.64E658F0--
