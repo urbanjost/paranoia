@@ -1,0 +1,2 @@
+prep  F90  TESTPRG90 --comment  doxygen  --verbose  -i  ../../app/DAYS2SEC/days2sec.[fF][fF] -o ../../app/days2sec.f90
+
