@@ -10,10 +10,3 @@ auto-tests = true
 auto-examples = true
 [install]
 library = false
-
-[dev-dependencies]
-M_strings = { git = "https://github.com/urbanjost/M_strings.git" }
-M_time    = { git = "https://github.com/urbanjost/M_time.git" }
-M_system    = { git = "https://github.com/urbanjost/M_system.git" }
-M_messages    = { git = "https://github.com/urbanjost/M_messages.git" }
-M_kracken = { git = "https://github.com/urbanjost/M_kracken.git" }
