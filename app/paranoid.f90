@@ -37,9 +37,7 @@
 !
 program test_paranoia
 implicit none
-character(len=:),allocatable :: options
 integer,parameter            :: is=100
-character(len=is)            :: string=' '
 !-----------------------------------------------------------------------------------------------------------------------------------
    print '(a)', repeat('=',80)                           ! print break line
    call print_version()
@@ -76,7 +74,7 @@ integer           :: io=stdout
    write(io,'(/,80("="))')
 end subroutine print_version
 
-subroutine split(input_line,array,delimiters,order,nulls)
+subroutine split(input_line,array,delimiters)
 !-----------------------------------------------------------------------------------------------------------------------------------
 
 !$@(#) M_strings::split(3f): parse string on delimiter characters and store tokens into an allocatable array
@@ -90,8 +88,6 @@ intrinsic index, min, present, len
 !    o no quoting of delimiters is supported
 character(len=*),intent(in)              :: input_line  ! input string to tokenize
 character(len=*),optional,intent(in)     :: delimiters  ! list of delimiter characters
-character(len=*),optional,intent(in)     :: order       ! order of output array sequential|[reverse|right]
-character(len=*),optional,intent(in)     :: nulls       ! return strings composed of delimiters or not ignore|return|ignoreend
 character(len=:),allocatable,intent(out) :: array(:)    ! output array of tokens
 !-----------------------------------------------------------------------------------------------------------------------------------
 integer                       :: n                      ! max number of strings INPUT_LINE could split into if all delimiter
